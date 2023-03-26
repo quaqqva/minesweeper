@@ -1,0 +1,14 @@
+button {
+  border-radius: 100px;
+  border:none;
+  padding:15px 45px 15px 45px;
+}
+
+.button-primary {
+  background-color:$color-primary;
+}
+
+.button-light {
+  background-color:$color-light-xl;
+  border: 2px solid $color-primary;
+}
