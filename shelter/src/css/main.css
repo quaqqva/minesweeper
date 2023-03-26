@@ -311,19 +311,33 @@ template {
   margin: 2px;
 }
 
+section {
+  padding: 0 30px;
+}
+
 header {
-  display: block;
+  display: flex;
+  align-items: center;
 }
 header .logo {
   display: inline-flex;
   flex-direction: column;
 }
+header nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
 header nav ul {
   max-width: 483px;
   list-style: none;
-  display: inline-flex;
+  display: flex;
   justify-content: space-evenly;
-  gap: 30px;
+  gap: 15px;
+}
+
+.header-pets {
+  background-color: white;
 }
 
 /*# sourceMappingURL=main.css.map */

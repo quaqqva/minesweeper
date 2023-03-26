@@ -1,14 +1,20 @@
 header {
-  display:block;
+  display:flex;
+  align-items:center;
   .logo {
     display:inline-flex;
     flex-direction:column;
   }
-  nav ul{
-    max-width:483px;
-    list-style: none;
-    display:inline-flex;
-    justify-content: space-evenly;
-    gap:30px;
+  nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    ul {
+      max-width: 483px;
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 15px;
+    }
   }
 }
