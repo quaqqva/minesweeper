@@ -311,4 +311,19 @@ template {
   margin: 2px;
 }
 
+header {
+  display: block;
+}
+header .logo {
+  display: inline-flex;
+  flex-direction: column;
+}
+header nav ul {
+  max-width: 483px;
+  list-style: none;
+  display: inline-flex;
+  justify-content: space-evenly;
+  gap: 30px;
+}
+
 /*# sourceMappingURL=main.css.map */
