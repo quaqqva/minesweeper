@@ -1,0 +1,25 @@
+header {
+  display:flex;
+  align-items:center;
+  .logo {
+    display:inline-flex;
+    flex-direction:column;
+  }
+  nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    ul {
+      max-width: 483px;
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 35px;
+    }
+  }
+}
+
+.header-pets {
+  background-color:$color-light-xl;
+  padding:0 30px;
+}

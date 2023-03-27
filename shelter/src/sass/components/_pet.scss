@@ -1,0 +1,14 @@
+.pet {
+  width: 270px;
+  height: 435px;
+  padding-bottom:30px;
+  background-color:$color-light-s;
+  border-radius:9px;
+  img {
+    width:100%;
+    margin-bottom:30px;
+  }
+  figcaption {
+    text-align:center;
+  }
+}

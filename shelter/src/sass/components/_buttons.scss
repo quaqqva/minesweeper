@@ -1,0 +1,44 @@
+button {
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+
+  display:inline;
+
+  border-radius: 100px;
+  border:none;
+  padding:15px 45px 15px 45px;
+
+  @include transition(background-color);
+  @include transition(border);
+  &:hover {
+    background-color:$color-primary-light;
+    border:none;
+  }
+}
+
+.button-primary {
+  background-color:$color-primary;
+}
+
+.button-light {
+  background-color:$color-light-xl;
+  border: 2px solid $color-primary;
+}
+
+.button-round {
+  width:52px;
+  height:52px;
+  border-radius: 50%;
+  padding:23px 19px;
+  text-align:center;
+
+  &:active {
+    background-color: $color-primary;
+    border:none;
+  }
+  &:disabled {
+    border: 2px solid $color-dark-s;
+  }
+}

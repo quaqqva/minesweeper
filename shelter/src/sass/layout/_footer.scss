@@ -1,0 +1,30 @@
+footer {
+  @include gradient-bg;
+  padding: 40px 40px 0 40px;
+  height:350px;
+  display:flex;
+  justify-content: space-between;
+  h3 {
+    margin: 0.75rem 0;
+  }
+}
+
+.contacts-row {
+  max-width:22%;
+  height:calc(100% - 60px);
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-bottom:60px;
+  figure {
+    @include flex-center(center);
+    margin:0;
+    img {
+      margin-right:1.5rem;
+    }
+    h4 {
+      margin:0;
+    }
+  }
+}
