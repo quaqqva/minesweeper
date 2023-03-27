@@ -1,5 +1,7 @@
 @mixin transition ($prop, $transition-time:0.3s) {
   transition: $prop $transition-time ease-in-out;
+  -webkit-transition: $prop $transition-time ease-in-out;
+  -ms-transition: $prop $transition-time ease-in-out;
 }
 
 @mixin gradient-bg {

@@ -312,6 +312,21 @@ html {
   font-weight: 400;
 }
 
+.logo:hover .logo-main {
+  transition: ease-in-out color 0.3s;
+  color: #FDDCC4;
+}
+.logo:hover .logo-main.on-light {
+  color: #292929;
+}
+.logo:hover .logo-secondary {
+  transition: ease-in-out color 0.3s;
+  color: white;
+}
+.logo:hover .logo-secondary.on-light {
+  color: #B2B2B2;
+}
+
 .logo-main {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -410,8 +425,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   border-bottom: 3px solid rgba(0, 0, 0, 0);
-  transition: color 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
+  transition: color ease-in-out 0.3s, border-color ease-in-out 0.3s;
 }
 a.on-dark:hover {
   color: #FAFAFA;
@@ -431,9 +445,13 @@ a.on-light:active, a.on-light:target {
 .contacts-row figure h4 {
   color: #F1CDB3;
   transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
 }
 .contacts-row figure img {
   transition: filter 0.3s ease-in-out;
+  -webkit-transition: filter 0.3s ease-in-out;
+  -ms-transition: filter 0.3s ease-in-out;
 }
 .contacts-row figure:hover h4 {
   color: #4C4C4C;
@@ -462,10 +480,9 @@ button {
   cursor: pointer;
   display: inline;
   border-radius: 100px;
-  border: 2px solid;
+  border: 2px solid #F1CDB3;
   padding: 15px 45px 15px 45px;
-  transition: background-color 0.3s ease-in-out;
-  transition: border 0.3s ease-in-out;
+  transition: ease-in-out background-color 0.3s, ease-in-out border 0.3s;
 }
 button:hover {
   background-color: #FDDCC4;
@@ -474,12 +491,10 @@ button:hover {
 
 .button-primary {
   background-color: #F1CDB3;
-  border-color: #F1CDB3;
 }
 
 .button-light {
   background-color: white;
-  border-color: #F1CDB3;
 }
 
 .button-round {
@@ -496,6 +511,7 @@ button:hover {
   background-color: #F1CDB3;
 }
 .button-round:disabled {
+  color: #CDCDCD;
   border-color: #CDCDCD;
   background-color: white;
 }
@@ -511,6 +527,8 @@ button:hover {
   background-color: #FAFAFA;
   border-radius: 9px;
   transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
 }
 .pet img {
   width: 100%;
@@ -693,9 +711,15 @@ footer h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
 }
 .credit-card-info img {
   margin-right: 1rem;
+}
+.credit-card-info:hover {
+  background-color: #FDDCC4;
 }
 
 .header-pets {

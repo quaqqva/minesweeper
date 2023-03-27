@@ -3,6 +3,23 @@ html {
   font-weight:400;
 }
 
+.logo:hover {
+  .logo-main {
+    transition: ease-in-out color 0.3s;
+    color:$color-primary-light;
+    &.on-light {
+      color:$color-dark-3xl;
+    }
+  }
+  .logo-secondary {
+    transition: ease-in-out color 0.3s;
+    color:$color-light-xl;
+    &.on-light {
+        color:$color-dark-m;
+    }
+  }
+}
+
 .logo-main {
   font-size:2rem;
   margin-bottom:10px;
@@ -104,8 +121,8 @@ a {
   text-decoration: none;
   cursor:pointer;
   border-bottom: 3px solid rgba(0,0,0,0);
-  @include transition(color);
-  @include transition(border-color);
+  transition: color ease-in-out 0.3s,
+  border-color ease-in-out 0.3s;
   &.on-dark:hover {
     color: $color-light-s;
   }
@@ -124,6 +141,7 @@ a {
     border-color:$color-primary;
   }
 }
+
 
 .contacts-row figure {
   h4 {

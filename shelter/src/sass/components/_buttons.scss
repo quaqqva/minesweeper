@@ -7,11 +7,12 @@ button {
   display:inline;
 
   border-radius: 100px;
-  border:2px solid;
+  border:2px solid $color-primary;
   padding:15px 45px 15px 45px;
 
-  @include transition(background-color);
-  @include transition(border);
+  transition: ease-in-out background-color 0.3s,
+  ease-in-out border 0.3s;
+
   &:hover {
     background-color:$color-primary-light;
     border-color:$color-primary-light;
@@ -20,12 +21,10 @@ button {
 
 .button-primary {
   background-color:$color-primary;
-  border-color: $color-primary;
 }
 
 .button-light {
   background-color:$color-light-xl;
-  border-color: $color-primary;
 }
 
 .button-round {
@@ -41,6 +40,7 @@ button {
     background-color: $color-primary;
   }
   &:disabled {
+    color:$color-dark-s;
     border-color: $color-dark-s;
     background-color: $color-light-xl;
 
