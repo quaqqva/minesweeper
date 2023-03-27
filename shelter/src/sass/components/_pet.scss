@@ -2,13 +2,25 @@
   width: 270px;
   height: 435px;
   padding-bottom:30px;
+  margin:0;
   background-color:$color-light-s;
   border-radius:9px;
   img {
     width:100%;
     margin-bottom:30px;
+    border-radius: 9px 9px 0 0;
   }
   figcaption {
     text-align:center;
+  }
+  @include transition(transform);
+
+  &:hover {
+    cursor:pointer;
+    transform: scale(1.05);
+    button {
+      background-color:$color-primary-light;
+      border-color:$color-primary-light;
+    }
   }
 }

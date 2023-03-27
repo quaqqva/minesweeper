@@ -50,6 +50,7 @@
   background:$color-light-l;
   text-align:center;
   h3 {
+    width:40%;
     margin: 0 auto;
   }
   .pets-wrapper {
@@ -102,7 +103,12 @@
   background-color:$color-primary;
   border-radius:9px;
   @include flex-center(center);
+  @include transition(background-color);
   img {
     margin-right:1rem;
+  }
+
+  &:hover {
+    background-color:$color-primary-light;
   }
 }

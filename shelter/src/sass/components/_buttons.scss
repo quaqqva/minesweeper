@@ -3,18 +3,19 @@ button {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: $color-dark-3xl;
-
+  cursor:pointer;
   display:inline;
 
   border-radius: 100px;
-  border:none;
+  border:2px solid $color-primary;
   padding:15px 45px 15px 45px;
 
-  @include transition(background-color);
-  @include transition(border);
+  transition: ease-in-out background-color 0.3s,
+  ease-in-out border 0.3s;
+
   &:hover {
     background-color:$color-primary-light;
-    border:none;
+    border-color:$color-primary-light;
   }
 }
 
@@ -24,7 +25,6 @@ button {
 
 .button-light {
   background-color:$color-light-xl;
-  border: 2px solid $color-primary;
 }
 
 .button-round {
@@ -32,13 +32,20 @@ button {
   height:52px;
   border-radius: 50%;
   padding:23px 19px;
-  text-align:center;
-
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
   &:active {
     background-color: $color-primary;
-    border:none;
   }
   &:disabled {
-    border: 2px solid $color-dark-s;
+    color:$color-dark-s;
+    border-color: $color-dark-s;
+    background-color: $color-light-xl;
+
+    &:hover, &:active {
+      background-color: $color-light-s;
+    }
   }
 }

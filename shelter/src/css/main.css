@@ -312,6 +312,21 @@ html {
   font-weight: 400;
 }
 
+.logo:hover .logo-main {
+  transition: ease-in-out color 0.3s;
+  color: #FDDCC4;
+}
+.logo:hover .logo-main.on-light {
+  color: #292929;
+}
+.logo:hover .logo-secondary {
+  transition: ease-in-out color 0.3s;
+  color: white;
+}
+.logo:hover .logo-secondary.on-light {
+  color: #B2B2B2;
+}
+
 .logo-main {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -381,8 +396,16 @@ h5 {
 .paragraph-l.on-light {
   color: #545454;
 }
+.paragraph-l.on-light.initialized {
+  color: #292929;
+  border-bottom: 3px solid #F1CDB3;
+}
 .paragraph-l.on-dark {
   color: #CDCDCD;
+}
+.paragraph-l.on-dark.initialized {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
 }
 
 .paragraph-s {
@@ -401,20 +424,40 @@ footer figcaption h4 {
 a {
   text-decoration: none;
   cursor: pointer;
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  transition: color ease-in-out 0.3s, border-color ease-in-out 0.3s;
 }
 a.on-dark:hover {
   color: #FAFAFA;
 }
 a.on-dark:active, a.on-dark:target {
   color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
+  border-color: #F1CDB3;
 }
 a.on-light:hover {
   color: #292929;
 }
 a.on-light:active, a.on-light:target {
   color: #545454;
-  border-bottom: 3px solid #F1CDB3;
+  border-color: #F1CDB3;
+}
+
+.contacts-row figure h4 {
+  color: #F1CDB3;
+  transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
+}
+.contacts-row figure img {
+  transition: filter 0.3s ease-in-out;
+  -webkit-transition: filter 0.3s ease-in-out;
+  -ms-transition: filter 0.3s ease-in-out;
+}
+.contacts-row figure:hover h4 {
+  color: #4C4C4C;
+}
+.contacts-row figure:hover img {
+  filter: invert(29%) sepia(0%) saturate(0%) hue-rotate(3deg) brightness(90%) contrast(85%);
 }
 
 html {
@@ -434,16 +477,16 @@ button {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
+  cursor: pointer;
   display: inline;
   border-radius: 100px;
-  border: none;
+  border: 2px solid #F1CDB3;
   padding: 15px 45px 15px 45px;
-  transition: background-color 0.35s ease-in-out;
-  transition: border 0.35s ease-in-out;
+  transition: ease-in-out background-color 0.3s, ease-in-out border 0.3s;
 }
 button:hover {
   background-color: #FDDCC4;
-  border: none;
+  border-color: #FDDCC4;
 }
 
 .button-primary {
@@ -452,7 +495,6 @@ button:hover {
 
 .button-light {
   background-color: white;
-  border: 2px solid #F1CDB3;
 }
 
 .button-round {
@@ -460,29 +502,49 @@ button:hover {
   height: 52px;
   border-radius: 50%;
   padding: 23px 19px;
-  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
 }
 .button-round:active {
   background-color: #F1CDB3;
-  border: none;
 }
 .button-round:disabled {
-  border: 2px solid #CDCDCD;
+  color: #CDCDCD;
+  border-color: #CDCDCD;
+  background-color: white;
+}
+.button-round:disabled:hover, .button-round:disabled:active {
+  background-color: #FAFAFA;
 }
 
 .pet {
   width: 270px;
   height: 435px;
   padding-bottom: 30px;
+  margin: 0;
   background-color: #FAFAFA;
   border-radius: 9px;
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
 }
 .pet img {
   width: 100%;
   margin-bottom: 30px;
+  border-radius: 9px 9px 0 0;
 }
 .pet figcaption {
   text-align: center;
+}
+.pet:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.pet:hover button {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 header {
@@ -594,6 +656,7 @@ footer h3 {
   text-align: center;
 }
 .our-pets h3 {
+  width: 40%;
   margin: 0 auto;
 }
 .our-pets .pets-wrapper {
@@ -648,9 +711,37 @@ footer h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
 }
 .credit-card-info img {
   margin-right: 1rem;
+}
+.credit-card-info:hover {
+  background-color: #FDDCC4;
+}
+
+.header-pets {
+  padding: 30px 40px;
+}
+
+.main-pets {
+  padding: 80px 40px 100px 40px;
+  background-color: #F6F6F6;
+  text-align: center;
+}
+.main-pets h3 {
+  width: 40%;
+  margin: 0 auto;
+}
+.main-pets .pets-wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 90px;
+  grid-row-gap: 30px;
+  margin: 60px auto;
 }
 
 /*# sourceMappingURL=main.css.map */

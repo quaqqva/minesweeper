@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="IE=Edge">
     <link rel="stylesheet" href="src/css/main.css">
+    <link rel="icon" type="image/x-icon" href="src/img/icons/favicon.ico">
     <title>Shelter | Main</title>
 </head>
 <body>
     <main>
         <section class="start-screen" id="start">
             <header>
-                <div class="logo">
+                <a class="logo" href="">
                     <span class="logo-main">Cozy house</span>
                     <span class="logo-secondary">Shelter for pets in Boston</span>
-                </div>
+                </a>
                 <nav>
                     <ul>
                         <li>
-                            <a class="paragraph-l on-dark" href="#about">About the shelter</a>
+                            <span class="paragraph-l on-dark initialized">
+                                About the shelter
+                            </span>
                         </li>
                         <li>
-                            <a class="paragraph-l on-dark" href="#out-pets">Our Pets</a>
+                            <a class="paragraph-l on-dark" href="our-pets.html"
+                               target="_blank">
+                                Our Pets
+                            </a>
                         </li>
                         <li>
                             <a class="paragraph-l on-dark" href="#help-items">Help the shelter</a>
@@ -37,7 +43,9 @@
                     <h2 class="on-dark">Not only people need a house</h2>
                     <p class="paragraph-l on-dark">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she
                         will love you more than anybody else in the world, you will see!</p>
-                    <button class="button-primary">Make a friend</button>
+                    <button class="button-primary" onclick="location.href='#our-pets'">
+                        Make a friend
+                    </button>
                 </div>
                 <img src="src/img/photos/start-screen-puppy.png" alt="puppy">
             </div>
@@ -55,8 +63,8 @@
                     attached to the pets and would hardly ever leave them alone.</p>
             </div>
         </section>
-        <section class="our-pets" id="out-pets">
-            <h3>Our friends who are looking for a house</h3>
+        <section class="our-pets" id="our-pets">
+            <h3>Our friends who<br> are looking for a house</h3>
             <div class="pets-wrapper">
                 <button class="button-round button-light"><</button>
                 <figure class="pet">
@@ -82,10 +90,12 @@
                 </figure>
                 <button class="button-round button-light">></button>
             </div>
-            <button class="button-primary">Get to know the rest</button>
+            <button class="button-primary" onclick="location.href='our-pets.html'">
+                Get to know the rest
+            </button>
         </section>
         <section class="help-items" id="help-items">
-            <h3>How can you help our shelter</h3>
+            <h3>How you can help our shelter</h3>
             <div class="icons-wrapper">
                 <figure>
                     <img src="src/img/icons/pet-food.svg" alt="Pet food icon">
@@ -130,10 +140,12 @@
             <div class="text-wrapper">
                 <h3>You can also make a donation</h3>
                 <h5>Name of the bank / Type of bank account</h5>
-                <div class="credit-card-info">
-                    <img src="src/img/icons/credit-card.svg" alt="Credit card icon">
-                    <h4>8380 2880 8028 8791 7435</h4>
-                </div>
+                <a href="">
+                    <div class="credit-card-info">
+                        <img src="src/img/icons/credit-card.svg" alt="Credit card icon">
+                        <h4>8380 2880 8028 8791 7435</h4>
+                    </div>
+                </a>
                 <p class="paragraph-s">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et
                     vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
@@ -145,22 +157,30 @@
             <h3 class="on-dark">For questions and suggestions</h3>
             <figure>
                 <img src="src/img/icons/mail.svg" alt="Mail icon">
-                <figcaption><h4>email@shelter.com</h4></figcaption>
+                <a href="mailto:email@shelter.com">
+                    <h4>email@shelter.com</h4>
+                </a>
             </figure>
             <figure>
                 <img src="src/img/icons/phone.svg" alt="Phone icon">
-                <figcaption><h4>+13 674 567 75 54</h4></figcaption>
+                <a href="tel:+136745677554">
+                    <h4>+13 674 567 75 54</h4>
+                </a>
             </figure>
         </div>
         <div class="contacts-row">
             <h3 class="on-dark">We are waiting for your visit</h3>
             <figure>
                 <img src="src/img/icons/pin.svg" alt="Pin icon">
-                <figcaption><h4>1 Central Street, Boston (entrance from the store)</h4></figcaption>
+                <a href="https://www.google.com/maps/place/Boston+Animal+Care+and+Control+Shelter/@42.3657951,-70.9798577,19z/data=!4m9!1m2!2m1!1sboston+animal+shelter!3m5!1s0x89e37937d4975c71:0xc63954a44f1d0dee!8m2!3d42.2943456!4d-71.1215115!16s%2Fg%2F1tg16r1j" target="_blank">
+                    <h4>1 Central Street, Boston (entrance from the store)</h4>
+                </a>
             </figure>
             <figure>
                 <img src="src/img/icons/pin.svg" alt="Pin icon">
-                <figcaption><h4>18 South Park, London</h4></figcaption>
+                <a href="https://www.google.com/maps/search/18+South+Park,+London+/@52.1337419,-0.4661482,21z" target="_blank">
+                    <h4>18 South Park, London</h4>
+                </a>
             </figure>
         </div>
         <img src="src/img/photos/footer-puppy.png" alt="Puppy photo">
