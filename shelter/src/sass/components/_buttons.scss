@@ -26,10 +26,11 @@ button {
 }
 
 .button-round {
+  width:52px;
+  height:52px;
+  border-radius: 50%;
+  padding:23px 19px;
   text-align:center;
-  width:100px;
-  height:100px;
-  border-radius: 100%;
 
   &:active {
     background-color: $color-primary;

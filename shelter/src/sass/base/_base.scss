@@ -1,3 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
 section {
-  padding:0 30px;
+  position:relative;
+  padding:0 40px;
+}
+
+.text-wrapper {
+  h2,h3 {
+    margin-top:0px;
+  }
 }

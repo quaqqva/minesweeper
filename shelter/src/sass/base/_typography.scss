@@ -1,6 +1,5 @@
 html {
   font-family: Georgia, sans-serif;
-  scroll-behavior: smooth;
   font-weight:400;
 }
 
@@ -73,6 +72,10 @@ h5 {
   &.on-light {
     color:$color-dark-l;
   }
+
+  &.on-dark {
+    color: $color-dark-s;
+  }
 }
 
 .paragraph-s {
@@ -90,11 +93,12 @@ footer figcaption h4{
 
 a {
   text-decoration: none;
-  &:hover {
+  cursor:pointer;
+  &.on-dark:hover {
     color: $color-light-s;
   }
 
-  &:active {
+  &.on-dark:active, &.on-dark:target {
     color:$color-light-s;
     border-bottom: 3px solid $color-primary;
   }
@@ -103,7 +107,8 @@ a {
     color: $color-dark-3xl;
   }
 
-  &.on-light:active {
+  &.on-light:active, &.on-light:target {
+    color: $color-dark-l;
     border-bottom:3px solid $color-primary;
   }
 }

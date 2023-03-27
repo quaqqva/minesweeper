@@ -18,64 +18,70 @@
                 <nav>
                     <ul>
                         <li>
-                            <a class="paragraph-l" href="#about">About the shelter</a>
+                            <a class="paragraph-l on-dark" href="#about">About the shelter</a>
                         </li>
                         <li>
-                            <a class="paragraph-l" href="#out-pets">Our Pets</a>
+                            <a class="paragraph-l on-dark" href="#out-pets">Our Pets</a>
                         </li>
                         <li>
-                            <a class="paragraph-l" href="#help-items">Help the shelter</a>
+                            <a class="paragraph-l on-dark" href="#help-items">Help the shelter</a>
                         </li>
                         <li>
-                            <a class="paragraph-l" href="#footer">Contacts</a>
+                            <a class="paragraph-l on-dark" href="#footer">Contacts</a>
                         </li>
                     </ul>
                 </nav>
             </header>
-            <h2 class="on-dark">Not only people need a house</h2>
-            <p class="paragraph-l">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she
-            will love you more than anybody else in the world, you will see!</p>
-            <button class="button-primary">Make a friend</button>
-            <img src="src/img/photos/start-screen-puppy.png" alt="puppy">
+            <div class="start-screen-elements">
+                <div class="text-wrapper">
+                    <h2 class="on-dark">Not only people need a house</h2>
+                    <p class="paragraph-l on-dark">We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she
+                        will love you more than anybody else in the world, you will see!</p>
+                    <button class="button-primary">Make a friend</button>
+                </div>
+                <img src="src/img/photos/start-screen-puppy.png" alt="puppy">
+            </div>
         </section>
         <section class="about" id="about">
             <img src="src/img/photos/about-pets.png" alt="cat and dog">
-            <h3>About the shelter “Cozy House”</h3>
-            <p class="paragraph-l">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find
-                a family. The others will continue to live with us and will be waiting for a lucky chance to become
-                dearly loved.</p>
-            <p class="paragraph-l">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including
-                psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels.
-                About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become
-                attached to the pets and would hardly ever leave them alone.</p>
+            <div class="text-wrapper">
+                <h3>About the shelter “Cozy House”</h3>
+                <p class="paragraph-l">Currently we have 121 dogs and 342 cats on our hands and statistics show that only 20% of them will find
+                    a family. The others will continue to live with us and will be waiting for a lucky chance to become
+                    dearly loved.</p>
+                <p class="paragraph-l">We feed our wards with the best food and make sure that they do not get sick, feel comfortable (including
+                    psychologically) and well. We are supported by 87 volunteers and 28 employees of various skill levels.
+                    About 12% of the animals are taken by the shelter staff. Taking care of the animals, they become
+                    attached to the pets and would hardly ever leave them alone.</p>
+            </div>
         </section>
         <section class="our-pets" id="out-pets">
             <h3>Our friends who are looking for a house</h3>
+            <button class="button-round button-light left-button"><</button>
             <div class="pets-wrapper">
-                <button class="button-round button-light"><</button>
-                <div class="pet">
-                    <figure>
-                        <img src="src/img/photos/pets-katrine.png" alt="Katrine photo">
-                        <figcaption><h4>Katrine</h4></figcaption>
-                    </figure>
-                    <button class="button-light">Learn more</button>
-                </div>
-                <div class="pet">
-                    <figure>
-                        <img src="src/img/photos/pets-jennifer.png" alt="Jennifer photo">
-                        <figcaption><h4>Jennifer</h4></figcaption>
-                    </figure>
-                    <button class="button-light">Learn more</button>
-                </div>
-                <div class="pet">
-                    <figure>
-                        <img src="src/img/photos/pets-woody.png" alt="Woody photo">
-                        <figcaption>Woody</figcaption>
-                    </figure>
-                    <button class="button-light">Learn more</button>
-                </div>
-                <button class="button-round button-light">></button>
+                <figure class="pet">
+                    <img src="src/img/photos/pets-katrine.png" alt="Katrine photo">
+                    <figcaption>
+                        <h4>Katrine</h4>
+                        <button class="button-light">Learn more</button>
+                    </figcaption>
+                </figure>
+                <figure class="pet">
+                    <img src="src/img/photos/pets-jennifer.png" alt="Jennifer photo">
+                    <figcaption>
+                        <h4>Jennifer</h4>
+                        <button class="button-light">Learn more</button>
+                    </figcaption>
+                </figure>
+                <figure class="pet">
+                    <img src="src/img/photos/pets-woody.png" alt="Woody photo">
+                    <figcaption>
+                        <h4>Woody</h4>
+                        <button class="button-light">Learn more</button>
+                    </figcaption>
+                </figure>
             </div>
+            <button class="button-round button-light right-button">></button>
             <button class="button-primary">Get to know the rest</button>
         </section>
         <section class="help-items" id="help-items">
@@ -107,7 +113,7 @@
                 </figure>
                 <figure>
                     <img src="src/img/icons/medicine.svg" alt="Medicine icon">
-                    <figcaption><h4>Pet food</h4></figcaption>
+                    <figcaption><h4>Medicines</h4></figcaption>
                 </figure>
                 <figure>
                     <img src="src/img/icons/collar.svg" alt="Collar icon">
@@ -121,32 +127,36 @@
         </section>
         <section class="help-donation" id="help-donation">
             <img src="src/img/photos/donation-dog.png" alt="Dog photo">
-            <h3>You can also make a donation</h3>
-            <h5>Name of the bank / Type of bank account</h5>
-            <div class="credit-card-info">
-                <img src="src/img/icons/credit-card.svg" alt="Credit card icon">
-                <h4>8380 2880 8028 8791 7435</h4>
+            <div class="text-wrapper">
+                <h3>You can also make a donation</h3>
+                <h5>Name of the bank / Type of bank account</h5>
+                <div class="credit-card-info">
+                    <img src="src/img/icons/credit-card.svg" alt="Credit card icon">
+                    <h4>8380 2880 8028 8791 7435</h4>
+                </div>
+                <p class="paragraph-s">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et
+                    vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
             </div>
-            <p class="paragraph-s">Legal information and lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas a ipsum at libero sagittis dignissim sed ac diam. Praesent ultrices maximus tortor et
-                vulputate. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
         </section>
     </main>
     <footer id="footer">
-        <div class="contacts-wrapper">
+        <div class="contacts-row">
             <h3 class="on-dark">For questions and suggestions</h3>
-            <h3 class="on-dark">We are waiting for your visit</h3>
             <figure>
                 <img src="src/img/icons/mail.svg" alt="Mail icon">
                 <figcaption><h4>email@shelter.com</h4></figcaption>
             </figure>
             <figure>
-                <img src="src/img/icons/pin.svg" alt="Pin icon">
-                <figcaption><h4>1 Central Street, Boston (entrance from the store)</h4></figcaption>
-            </figure>
-            <figure>
                 <img src="src/img/icons/phone.svg" alt="Phone icon">
                 <figcaption><h4>+13 674 567 75 54</h4></figcaption>
+            </figure>
+        </div>
+        <div class="contacts-row">
+            <h3 class="on-dark">We are waiting for your visit</h3>
+            <figure>
+                <img src="src/img/icons/pin.svg" alt="Pin icon">
+                <figcaption><h4>1 Central Street, Boston (entrance from the store)</h4></figcaption>
             </figure>
             <figure>
                 <img src="src/img/icons/pin.svg" alt="Pin icon">
