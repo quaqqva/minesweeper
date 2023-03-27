@@ -309,17 +309,108 @@ template {
 
 html {
   font-family: Georgia, sans-serif;
+  scroll-behavior: smooth;
+  font-weight: 400;
 }
 
 .logo-main {
   font-size: 2rem;
   margin-bottom: 10px;
+  line-height: 110%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+}
+.logo-main.on-light {
+  color: #545454;
 }
 
 .logo-secondary {
-  margin-top: 0;
   font-family: Arial, sans-serif;
   font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: white;
+}
+.logo-secondary.on-light {
+  color: #292929;
+}
+
+.on-dark {
+  color: white;
+}
+
+h2, h3, h4, h5 {
+  font-weight: 400;
+  color: #545454;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 130%;
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+h4, .button-round {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+}
+
+.paragraph-l {
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4C4C4C;
+}
+.paragraph-l.on-light {
+  color: #545454;
+}
+
+.paragraph-s {
+  font-family: "Arial", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #B2B2B2;
+}
+
+footer figcaption h4 {
+  color: #F1CDB3;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #FAFAFA;
+}
+a:active {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
+}
+a.on-light:hover {
+  color: #292929;
+}
+a.on-light:active {
+  border-bottom: 3px solid #F1CDB3;
 }
 
 section {
@@ -327,9 +418,19 @@ section {
 }
 
 button {
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #292929;
   border-radius: 100px;
   border: none;
   padding: 15px 45px 15px 45px;
+  transition: background-color 0.35s ease-in-out;
+  transition: border 0.35s ease-in-out;
+}
+button:hover {
+  background-color: #FDDCC4;
+  border: none;
 }
 
 .button-primary {
@@ -339,6 +440,20 @@ button {
 .button-light {
   background-color: white;
   border: 2px solid #F1CDB3;
+}
+
+.button-round {
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+}
+.button-round:active {
+  background-color: #F1CDB3;
+  border: none;
+}
+.button-round:disabled {
+  border: 2px solid #CDCDCD;
 }
 
 header {
@@ -364,6 +479,17 @@ header nav ul {
 
 .header-pets {
   background-color: white;
+  padding: 0 30px;
+}
+
+.help-items {
+  text-align: center;
+}
+.help-items .icons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 120px;
+  justify-content: space-evenly;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,19 @@
 button {
+  font-size: 17px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: $color-dark-3xl;
+
   border-radius: 100px;
   border:none;
   padding:15px 45px 15px 45px;
+
+  @include transition(background-color);
+  @include transition(border);
+  &:hover {
+    background-color:$color-primary-light;
+    border:none;
+  }
 }
 
 .button-primary {
@@ -11,4 +23,19 @@ button {
 .button-light {
   background-color:$color-light-xl;
   border: 2px solid $color-primary;
+}
+
+.button-round {
+  text-align:center;
+  width:100px;
+  height:100px;
+  border-radius: 100%;
+
+  &:active {
+    background-color: $color-primary;
+    border:none;
+  }
+  &:disabled {
+    border: 2px solid $color-dark-s;
+  }
 }

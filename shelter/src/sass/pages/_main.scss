@@ -1,0 +1,21 @@
+.start-screen {
+
+}
+
+.about {
+
+}
+
+.our-pets {
+
+}
+
+.help-items {
+  text-align:center;
+  .icons-wrapper {
+    display:flex;
+    flex-wrap:wrap;
+    gap:120px;
+    justify-content: space-evenly;
+  }
+}
