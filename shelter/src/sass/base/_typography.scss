@@ -71,10 +71,19 @@ h5 {
 
   &.on-light {
     color:$color-dark-l;
+    &.initialized {
+      color:$color-dark-3xl;
+      border-bottom: 3px solid $color-primary;
+    }
   }
 
   &.on-dark {
     color: $color-dark-s;
+
+    &.initialized {
+      color: $color-light-s;
+      border-bottom:3px solid $color-primary;
+    }
   }
 }
 
@@ -112,3 +121,4 @@ a {
     border-bottom:3px solid $color-primary;
   }
 }
+
