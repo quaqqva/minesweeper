@@ -3,7 +3,7 @@ button {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: $color-dark-3xl;
-
+  cursor:pointer;
   display:inline;
 
   border-radius: 100px;
@@ -36,10 +36,9 @@ button {
   display:inline-flex;
   justify-content: center;
   align-items: center;
-
+  margin:10px;
   &:active {
     background-color: $color-primary;
-    border:none;
   }
   &:disabled {
     border-color: $color-dark-s;

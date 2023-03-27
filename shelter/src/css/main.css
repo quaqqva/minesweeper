@@ -409,20 +409,37 @@ footer figcaption h4 {
 a {
   text-decoration: none;
   cursor: pointer;
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  transition: color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
 }
 a.on-dark:hover {
   color: #FAFAFA;
 }
 a.on-dark:active, a.on-dark:target {
   color: #FAFAFA;
-  border-bottom: 3px solid #F1CDB3;
+  border-color: #F1CDB3;
 }
 a.on-light:hover {
   color: #292929;
 }
 a.on-light:active, a.on-light:target {
   color: #545454;
-  border-bottom: 3px solid #F1CDB3;
+  border-color: #F1CDB3;
+}
+
+.contacts-row figure h4 {
+  color: #F1CDB3;
+  transition: color 0.3s ease-in-out;
+}
+.contacts-row figure img {
+  transition: filter 0.3s ease-in-out;
+}
+.contacts-row figure:hover h4 {
+  color: #4C4C4C;
+}
+.contacts-row figure:hover img {
+  filter: invert(29%) sepia(0%) saturate(0%) hue-rotate(3deg) brightness(90%) contrast(85%);
 }
 
 html {
@@ -442,12 +459,13 @@ button {
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #292929;
+  cursor: pointer;
   display: inline;
   border-radius: 100px;
   border: 2px solid;
   padding: 15px 45px 15px 45px;
-  transition: background-color 0.35s ease-in-out;
-  transition: border 0.35s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
 }
 button:hover {
   background-color: #FDDCC4;
@@ -472,10 +490,10 @@ button:hover {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 .button-round:active {
   background-color: #F1CDB3;
-  border: none;
 }
 .button-round:disabled {
   border-color: #CDCDCD;
@@ -492,6 +510,7 @@ button:hover {
   margin: 0;
   background-color: #FAFAFA;
   border-radius: 9px;
+  transition: transform 0.3s ease-in-out;
 }
 .pet img {
   width: 100%;
@@ -500,6 +519,14 @@ button:hover {
 }
 .pet figcaption {
   text-align: center;
+}
+.pet:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.pet:hover button {
+  background-color: #FDDCC4;
+  border-color: #FDDCC4;
 }
 
 header {

@@ -13,4 +13,14 @@
   figcaption {
     text-align:center;
   }
+  @include transition(transform);
+
+  &:hover {
+    cursor:pointer;
+    transform: scale(1.05);
+    button {
+      background-color:$color-primary-light;
+      border-color:$color-primary-light;
+    }
+  }
 }

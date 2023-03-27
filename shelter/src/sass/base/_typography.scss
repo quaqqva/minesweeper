@@ -103,13 +103,16 @@ footer figcaption h4{
 a {
   text-decoration: none;
   cursor:pointer;
+  border-bottom: 3px solid rgba(0,0,0,0);
+  @include transition(color);
+  @include transition(border-color);
   &.on-dark:hover {
     color: $color-light-s;
   }
 
   &.on-dark:active, &.on-dark:target {
     color:$color-light-s;
-    border-bottom: 3px solid $color-primary;
+    border-color: $color-primary;
   }
 
   &.on-light:hover {
@@ -118,7 +121,30 @@ a {
 
   &.on-light:active, &.on-light:target {
     color: $color-dark-l;
-    border-bottom:3px solid $color-primary;
+    border-color:$color-primary;
+  }
+}
+
+.contacts-row figure {
+  h4 {
+    color: $color-primary;
+    @include transition(color);
+  }
+  img {
+    @include transition(filter);
+  }
+  &:hover{
+    h4 {
+      color: $color-dark-xl;
+    }
+    img {
+      filter: invert(29%)
+      sepia(0%)
+      saturate(0%)
+      hue-rotate(3deg)
+      brightness(90%)
+      contrast(85%);
+    }
   }
 }
 
