@@ -12,6 +12,7 @@ button {
   margin:0;
   transition: ease-in-out background-color 0.3s,
   ease-in-out border 0.3s, ease-in-out transform 0.2s;
+  background-color:transparent;
 
   &:hover {
     background-color:$color-primary-light;
@@ -34,7 +35,6 @@ button {
   display:inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
 
   &:active {
     background-color: $color-primary;
@@ -42,15 +42,11 @@ button {
   &:disabled, &:disabled:hover, &:disabled:active {
     cursor: auto;
     color:$color-dark-s;
-    background-color:transparent;
     border-color: $color-dark-s;
     transform: none;
     transition: none;
+    background-color:transparent;
   }
-}
-
-.button-light {
-  background-color:$color-light-xl;
 }
 
 .right img {
