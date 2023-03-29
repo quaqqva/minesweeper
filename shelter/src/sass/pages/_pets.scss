@@ -1,0 +1,25 @@
+.main-pets {
+  @include section-padding;
+  padding-top:80px;
+  padding-bottom: 100px;
+  background-color: $color-light-l;
+  text-align:center;
+  h3 {
+    width:40%;
+    margin:0 auto;
+  }
+
+  .pets-wrapper {
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap:30px;
+    margin: 60px auto;
+  }
+
+  .pets-navigation {
+    @include flex-center(center);
+    gap:20px;
+  }
+}

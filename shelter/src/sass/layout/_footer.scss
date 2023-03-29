@@ -1,0 +1,37 @@
+footer {
+  position:relative;
+  right:8px;
+  @include gradient-bg;
+  @include section-padding;
+  padding-top:40px;
+  display:flex;
+  justify-content: space-between;
+  gap:160px;
+}
+
+.contacts-row, .locations-row {
+  display:flex;
+  flex:1 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top:16px;
+  margin-bottom:60px;
+  a {
+    @include flex-center(center);
+    margin:0;
+    img {
+      margin-right:1.5rem;
+    }
+    h4 {
+      margin:0;
+    }
+  }
+}
+
+.contacts-row {
+  flex-basis: 280px;
+}
+.locations-row {
+  flex-basis: 302px;
+}
