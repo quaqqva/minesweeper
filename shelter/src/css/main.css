@@ -487,6 +487,7 @@ button {
   padding: 15px 45px;
   margin: 0;
   transition: ease-in-out background-color 0.3s, ease-in-out border 0.3s, ease-in-out transform 0.2s;
+  background-color: transparent;
 }
 button:hover {
   background-color: #FDDCC4;
@@ -508,7 +509,6 @@ button:active {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
 }
 .button-round:active {
   background-color: #F1CDB3;
@@ -516,14 +516,10 @@ button:active {
 .button-round:disabled, .button-round:disabled:hover, .button-round:disabled:active {
   cursor: auto;
   color: #CDCDCD;
-  background-color: transparent;
   border-color: #CDCDCD;
   transform: none;
   transition: none;
-}
-
-.button-light {
-  background-color: white;
+  background-color: transparent;
 }
 
 .right img {
