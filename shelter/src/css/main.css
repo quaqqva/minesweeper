@@ -589,7 +589,7 @@ header nav ul {
 footer {
   position: relative;
   right: 8px;
-  background: url("../img/bg/noise_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url("./../img/bg/noise_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   padding: 0 calc((100vw - 1280px) / 2 + 40px);
   padding-top: 40px;
   display: flex;
@@ -628,7 +628,7 @@ footer {
 }
 
 .start-screen {
-  background: url("../img/bg/noise_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
+  background: url("./../img/bg/noise_transparent@2X.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
   padding-top: 30px;
   padding-bottom: 0;
 }
