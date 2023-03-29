@@ -11,11 +11,14 @@ button {
   padding:15px 45px;
   margin:0;
   transition: ease-in-out background-color 0.3s,
-  ease-in-out border 0.3s;
+  ease-in-out border 0.3s, ease-in-out transform 0.2s;
 
   &:hover {
     background-color:$color-primary-light;
     border-color:$color-primary-light;
+  }
+  &:active {
+    transform: scale(0.9);
   }
 }
 
@@ -36,10 +39,13 @@ button {
   &:active {
     background-color: $color-primary;
   }
-  &:disabled {
+  &:disabled, &:disabled:hover, &:disabled:active {
     cursor: auto;
     color:$color-dark-s;
+    background-color:transparent;
     border-color: $color-dark-s;
+    transform: none;
+    transition: none;
   }
 }
 
