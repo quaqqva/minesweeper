@@ -4,7 +4,7 @@ html {
 }
 
 .logo:hover {
-  .logo-main {
+  .h1 {
     transition: ease-in-out color 0.3s;
     color:$color-primary-light;
     &.on-light {
@@ -20,10 +20,10 @@ html {
   }
 }
 
-.logo-main {
+h1 {
   font-size:2rem;
-  margin-bottom:10px;
   line-height: 110%;
+  font-weight:400;
   display: flex;
   align-items: center;
   letter-spacing: 0.06em;
@@ -37,8 +37,7 @@ html {
   font-family: Arial, sans-serif;
   font-size:13px;
   line-height: 15px;
-  display: flex;
-  align-items: center;
+  margin-left:4px;
   letter-spacing: 0.1em;
   color: $color-light-xl;
   &.on-light {
@@ -85,7 +84,6 @@ h5 {
   font-size: 15px;
   line-height: 160%;
   color: $color-dark-xl;
-
   &.on-light {
     color:$color-dark-l;
     &.initialized {
@@ -143,25 +141,20 @@ a {
 }
 
 
-.contacts-row figure {
+.contacts-row figure, .locations-row figure {
   h4 {
     color: $color-primary;
-    @include transition(color);
+    transition: ease-in-out color 0.3s;
   }
   img {
-    @include transition(filter);
+    transition: ease-in-out filter 0.3s;
   }
   &:hover{
     h4 {
-      color: $color-dark-xl;
+      color: $color-light-xl;
     }
     img {
-      filter: invert(29%)
-      sepia(0%)
-      saturate(0%)
-      hue-rotate(3deg)
-      brightness(90%)
-      contrast(85%);
+      filter: hue-rotate(-25.16deg) saturate(31.11%) brightness(117.65%);
     }
   }
 }

@@ -1,15 +1,15 @@
 button {
-  font-size: 17px;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: $color-dark-3xl;
   cursor:pointer;
   display:inline;
-
+  width:auto;
+  height:52px;
   border-radius: 100px;
   border:2px solid $color-primary;
-  padding:15px 45px 15px 45px;
-
+  padding:15px 45px;
+  margin:0;
   transition: ease-in-out background-color 0.3s,
   ease-in-out border 0.3s;
 
@@ -35,17 +35,13 @@ button {
   display:inline-flex;
   justify-content: center;
   align-items: center;
-  margin:10px;
   &:active {
     background-color: $color-primary;
   }
   &:disabled {
+    cursor: auto;
     color:$color-dark-s;
     border-color: $color-dark-s;
     background-color: $color-light-xl;
-
-    &:hover, &:active {
-      background-color: $color-light-s;
-    }
   }
 }

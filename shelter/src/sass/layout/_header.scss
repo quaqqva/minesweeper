@@ -4,6 +4,10 @@ header {
   .logo {
     display:inline-flex;
     flex-direction:column;
+    h1 {
+      margin-top:0;
+      margin-bottom: 10px;
+    }
   }
   nav {
     display: flex;
@@ -21,5 +25,7 @@ header {
 
 .header-pets {
   background-color:$color-light-xl;
-  padding:0 30px;
+  @include section-padding;
+  padding-top:30px;
+  padding-bottom:30px;
 }

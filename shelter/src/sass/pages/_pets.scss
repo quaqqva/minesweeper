@@ -1,9 +1,7 @@
-.header-pets {
-  padding:30px 40px;
-}
-
 .main-pets {
-  padding:80px 40px 100px 40px;
+  @include section-padding;
+  padding-top:80px;
+  padding-bottom: 100px;
   background-color: $color-light-l;
   text-align:center;
   h3 {
