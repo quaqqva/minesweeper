@@ -7,17 +7,21 @@
   border-radius:9px;
   img {
     width:100%;
-    margin-bottom:30px;
+    margin-bottom:25px;
     border-radius: 9px 9px 0 0;
   }
   figcaption {
     text-align:center;
+    h4 {
+      margin-bottom:30px;
+    }
   }
-  @include transition(transform);
+  transition:transform ease-in-out 0.3s, box-shadow ease-in-out 0.3s;
 
   &:hover {
     cursor:pointer;
     transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
     button {
       background-color:$color-primary-light;
       border-color:$color-primary-light;

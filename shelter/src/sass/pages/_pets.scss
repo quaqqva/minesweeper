@@ -1,9 +1,7 @@
-.header-pets {
-  padding:30px 40px;
-}
-
 .main-pets {
-  padding:80px 40px 100px 40px;
+  @include section-padding;
+  padding-top:80px;
+  padding-bottom: 100px;
   background-color: $color-light-l;
   text-align:center;
   h3 {
@@ -15,12 +13,13 @@
     display:grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 90px;
+    grid-column-gap: 40px;
     grid-row-gap:30px;
     margin: 60px auto;
   }
 
   .pets-navigation {
-
+    @include flex-center(center);
+    gap:20px;
   }
 }

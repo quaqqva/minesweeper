@@ -1,21 +1,21 @@
 footer {
+  position:relative;
+  right:8px;
   @include gradient-bg;
-  padding: 40px 40px 0 40px;
-  height:350px;
+  @include section-padding;
+  padding-top:40px;
   display:flex;
   justify-content: space-between;
-  h3 {
-    margin: 0.75rem 0;
-  }
+  gap:160px;
 }
 
-.contacts-row {
-  max-width:22%;
-  height:calc(100% - 60px);
+.contacts-row, .locations-row {
   display:flex;
+  flex:1 0;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
+  margin-top:16px;
   margin-bottom:60px;
   figure {
     @include flex-center(center);
@@ -27,4 +27,11 @@ footer {
       margin:0;
     }
   }
+}
+
+.contacts-row {
+  flex-basis: 280px;
+}
+.locations-row {
+  flex-basis: 302px;
 }
