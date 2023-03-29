@@ -486,8 +486,8 @@ button {
   border: 2px solid #F1CDB3;
   padding: 15px 45px;
   margin: 0;
-  transition: ease-in-out background-color 0.3s, ease-in-out border 0.3s, ease-in-out transform 0.2s;
-  background-color: transparent;
+  transition: ease-in-out background 0.3s, ease-in-out border 0.3s, ease-in-out transform 0.2s;
+  background: transparent;
 }
 button:hover {
   background-color: #FDDCC4;
