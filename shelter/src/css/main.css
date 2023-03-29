@@ -497,10 +497,6 @@ button:hover {
   background-color: #F1CDB3;
 }
 
-.button-light {
-  background-color: white;
-}
-
 .button-round {
   width: 52px;
   height: 52px;
@@ -518,6 +514,14 @@ button:hover {
   cursor: auto;
   color: #CDCDCD;
   border-color: #CDCDCD;
+}
+
+.button-light {
+  background-color: white;
+}
+
+.right img {
+  transform: rotate(180deg);
 }
 
 .pet {

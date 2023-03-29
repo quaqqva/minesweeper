@@ -23,10 +23,6 @@ button {
   background-color:$color-primary;
 }
 
-.button-light {
-  background-color:$color-light-xl;
-}
-
 .button-round {
   width:52px;
   height:52px;
@@ -36,6 +32,7 @@ button {
   justify-content: center;
   align-items: center;
   background-color: transparent;
+
   &:active {
     background-color: $color-primary;
   }
@@ -44,4 +41,12 @@ button {
     color:$color-dark-s;
     border-color: $color-dark-s;
   }
+}
+
+.button-light {
+  background-color:$color-light-xl;
+}
+
+.right img {
+  transform: rotate(180deg);
 }
