@@ -509,6 +509,7 @@ button:hover {
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
 }
 .button-round:active {
   background-color: #F1CDB3;
@@ -517,7 +518,6 @@ button:hover {
   cursor: auto;
   color: #CDCDCD;
   border-color: #CDCDCD;
-  background-color: white;
 }
 
 .pet {
@@ -772,9 +772,15 @@ footer {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 90px;
+  grid-column-gap: 40px;
   grid-row-gap: 30px;
   margin: 60px auto;
+}
+.main-pets .pets-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

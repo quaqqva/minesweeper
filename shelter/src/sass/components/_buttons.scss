@@ -35,6 +35,7 @@ button {
   display:inline-flex;
   justify-content: center;
   align-items: center;
+  background-color: transparent;
   &:active {
     background-color: $color-primary;
   }
@@ -42,6 +43,5 @@ button {
     cursor: auto;
     color:$color-dark-s;
     border-color: $color-dark-s;
-    background-color: $color-light-xl;
   }
 }

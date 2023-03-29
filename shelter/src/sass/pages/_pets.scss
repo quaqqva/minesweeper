@@ -13,12 +13,13 @@
     display:grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 90px;
+    grid-column-gap: 40px;
     grid-row-gap:30px;
     margin: 60px auto;
   }
 
   .pets-navigation {
-
+    @include flex-center(center);
+    gap:20px;
   }
 }
