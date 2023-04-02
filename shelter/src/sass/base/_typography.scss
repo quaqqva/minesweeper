@@ -57,12 +57,18 @@ h2, h3, h4, h5 {
 h2 {
   font-size:44px;
   line-height:130%;
+  @media (max-width: $tablet-width) {
+    font-size: 25px;
+  }
 }
 
 h3 {
   font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
+  @media (max-width: $tablet-width) {
+    font-size: 25px;
+  }
 }
 
 h4, .button-round{

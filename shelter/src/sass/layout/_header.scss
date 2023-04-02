@@ -1,24 +1,33 @@
 header {
-  display:flex;
-  align-items:center;
+  @include flex-center(space-between);
   .logo {
-    display:inline-flex;
+    display:flex;
     flex-direction:column;
     h1 {
       margin-top:0;
       margin-bottom: 10px;
     }
   }
-  nav {
-    display: flex;
+  nav ul {
     flex-grow: 1;
-    justify-content: flex-end;
-    ul {
-      max-width: 483px;
-      list-style: none;
-      display: flex;
-      justify-content: space-evenly;
-      gap: 35px;
+    list-style: none;
+    @include flex-center(space-between);
+    gap:35px;
+  }
+
+  .burger-menu {
+    display:none;
+  }
+
+  @media (max-width: $tablet-width) {
+    nav {
+      ul {
+        display:none;
+      }
+      .burger-menu {
+        display:inline-block;
+        stroke: $color-primary;
+      }
     }
   }
 }
@@ -28,4 +37,20 @@ header {
   @include section-padding;
   padding-top:30px;
   padding-bottom:30px;
+
+  .burger-menu {
+    display:none;
+  }
+
+  @media (max-width: $tablet-width) {
+    nav {
+      ul {
+        display:none;
+      }
+      .burger-menu {
+        display:inline-block;
+        stroke: $color-dark-3xl;
+      }
+    }
+  }
 }
