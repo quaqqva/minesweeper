@@ -246,7 +246,6 @@
 .help-donation {
   background-color: $color-light-l;
   @include flex-center(center);
-  gap:30px;
 
   .text-wrapper {
     display:flex;
@@ -254,11 +253,38 @@
     gap:20px;
     h3 {
       width: 300px;
-      height: 90px;
     }
     .paragraph-s {
       width: 380px;
       height: 72px;
     }
+  }
+
+  @media (max-width: $desktop-width) {
+    flex-direction: column-reverse;
+  }
+  @media (max-width: $tablet-width) {
+    gap:42px;
+    .text-wrapper {
+      text-align:center;
+      align-items:center;
+    }
+    img {
+      @include responsive-img(260, 320, 20px);
+    }
+  }
+  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+    gap:60px;
+    .text-wrapper {
+      text-align: start;
+      align-items:flex-start;
+    }
+    img {
+      @include responsive-img(505, 768, 60px);
+    }
+  }
+  @media (min-width: $desktop-width) {
+    gap:30px;
+    flex-direction:row;
   }
 }

@@ -711,7 +711,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
 }
 .help-donation .text-wrapper {
   display: flex;
@@ -720,11 +719,45 @@ footer {
 }
 .help-donation .text-wrapper h3 {
   width: 300px;
-  height: 90px;
 }
 .help-donation .text-wrapper .paragraph-s {
   width: 380px;
   height: 72px;
+}
+@media (max-width: 1280px) {
+  .help-donation {
+    flex-direction: column-reverse;
+  }
+}
+@media (max-width: 768px) {
+  .help-donation {
+    gap: 42px;
+  }
+  .help-donation .text-wrapper {
+    text-align: center;
+    align-items: center;
+  }
+  .help-donation img {
+    max-width: calc(0.8125 * (100% + 20px));
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .help-donation {
+    gap: 60px;
+  }
+  .help-donation .text-wrapper {
+    text-align: start;
+    align-items: flex-start;
+  }
+  .help-donation img {
+    max-width: calc(0.6575520833 * (100% + 60px));
+  }
+}
+@media (min-width: 1280px) {
+  .help-donation {
+    gap: 30px;
+    flex-direction: row;
+  }
 }
 
 .main-pets {
