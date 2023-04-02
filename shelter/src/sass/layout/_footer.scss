@@ -3,23 +3,41 @@ footer {
   right:8px;
   @include gradient-bg;
   @include section-padding;
-  padding-top:40px;
-  padding-bottom:0;
   display:flex;
-  justify-content: space-between;
-  gap:160px;
+
+  @media (max-width: $desktop-width) {
+    padding-top:30px;
+    padding-bottom: 0;
+    align-items:center;
+  }
+  @media (max-width:$tablet-width) {
+    gap:40px;
+    flex-direction: column;
+  }
+  @media (min-width:$tablet-width) and (max-width:$desktop-width) {
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    gap:60px 65px;
+  }
+  @media (min-width: $desktop-width) {
+    padding-top:40px;
+    padding-bottom: 0;
+    gap:160px;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    align-items:stretch;
+  }
 }
 
 .contacts-row, .locations-row {
   display:flex;
-  flex:1 0;
+  flex-shrink: 0;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-top:16px;
-  margin-bottom:60px;
   a {
-    @include flex-center(center);
+    @include flex-center(space-between);
+    flex: 1 0;
     margin:0;
     img {
       margin-right:1.5rem;
@@ -28,11 +46,38 @@ footer {
       margin:0;
     }
   }
+  @media (max-width:$tablet-width) {
+    h3 {
+      text-align: center;
+    }
+    align-items: center;
+    a {
+      flex-basis:100%;
+    }
+  }
+  @media (min-width: $tablet-width) {
+    h3 {
+      text-align: start;
+    }
+    align-items: flex-start;
+  }
+  @media (max-width: $desktop-width) {
+    margin:0;
+    gap:33px;
+  }
+  @media (min-width: $desktop-width) {
+    margin:16px 0 60px;
+    gap:unset;
+  }
 }
 
 .contacts-row {
-  flex-basis: 280px;
+  @media (min-width:$tablet-width) {
+    flex-basis: 280px;
+  }
 }
 .locations-row {
-  flex-basis: 302px;
+  @media (min-width:$tablet-width) {
+    flex-basis: 302px;
+  }
 }

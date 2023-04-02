@@ -291,8 +291,9 @@ button:active {
 }
 
 .credit-card-info {
-  width: 349px;
+  width: auto;
   height: 43px;
+  padding: 10px 15px;
   background-color: #F1CDB3;
   border-radius: 9px;
   display: flex;
@@ -393,11 +394,7 @@ footer {
   position: relative;
   right: 8px;
   background: url("../img/bg/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
-  padding-top: 40px;
-  padding-bottom: 0;
   display: flex;
-  justify-content: space-between;
-  gap: 160px;
 }
 @media (min-width: 320px) {
   footer {
@@ -414,20 +411,49 @@ footer {
     padding: 80px calc((100vw - 1280px) / 2 + 40px) 100px;
   }
 }
+@media (max-width: 1280px) {
+  footer {
+    padding-top: 30px;
+    padding-bottom: 0;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  footer {
+    gap: 40px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 60px 65px;
+  }
+}
+@media (min-width: 1280px) {
+  footer {
+    padding-top: 40px;
+    padding-bottom: 0;
+    gap: 160px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+}
 
 .contacts-row, .locations-row {
   display: flex;
-  flex: 1 0;
+  flex-shrink: 0;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 16px;
-  margin-bottom: 60px;
 }
 .contacts-row a, .locations-row a {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex: 1 0;
   margin: 0;
 }
 .contacts-row a img, .locations-row a img {
@@ -436,13 +462,48 @@ footer {
 .contacts-row a h4, .locations-row a h4 {
   margin: 0;
 }
-
-.contacts-row {
-  flex-basis: 280px;
+@media (max-width: 768px) {
+  .contacts-row, .locations-row {
+    align-items: center;
+  }
+  .contacts-row h3, .locations-row h3 {
+    text-align: center;
+  }
+  .contacts-row a, .locations-row a {
+    flex-basis: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .contacts-row, .locations-row {
+    align-items: flex-start;
+  }
+  .contacts-row h3, .locations-row h3 {
+    text-align: start;
+  }
+}
+@media (max-width: 1280px) {
+  .contacts-row, .locations-row {
+    margin: 0;
+    gap: 33px;
+  }
+}
+@media (min-width: 1280px) {
+  .contacts-row, .locations-row {
+    margin: 16px 0 60px;
+    gap: unset;
+  }
 }
 
-.locations-row {
-  flex-basis: 302px;
+@media (min-width: 768px) {
+  .contacts-row {
+    flex-basis: 280px;
+  }
+}
+
+@media (min-width: 768px) {
+  .locations-row {
+    flex-basis: 302px;
+  }
 }
 
 .start-screen {
