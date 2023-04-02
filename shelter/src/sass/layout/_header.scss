@@ -11,12 +11,7 @@ header {
   nav ul {
     flex-grow: 1;
     list-style: none;
-    @include flex-center(space-between);
     gap:35px;
-  }
-
-  .burger-menu {
-    display:none;
   }
 
   @media (max-width: $tablet-width) {
@@ -30,6 +25,16 @@ header {
       }
     }
   }
+  @media (min-width: $tablet-width) {
+    nav {
+      .burger-menu {
+        display:none;
+      }
+      ul {
+        @include flex-center(space-between);
+      }
+    }
+  }
 }
 
 .header-pets {
@@ -37,10 +42,6 @@ header {
   @include section-padding;
   padding-top:30px;
   padding-bottom:30px;
-
-  .burger-menu {
-    display:none;
-  }
 
   @media (max-width: $tablet-width) {
     nav {
@@ -50,6 +51,16 @@ header {
       .burger-menu {
         display:inline-block;
         stroke: $color-dark-3xl;
+      }
+    }
+  }
+  @media (min-width: $tablet-width) {
+    nav {
+      .burger-menu {
+        display:none;
+      }
+      ul {
+        @include flex-center(space-between);
       }
     }
   }

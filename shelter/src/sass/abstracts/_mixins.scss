@@ -19,5 +19,8 @@
   @media (min-width: $desktop-width) {
     padding:80px calc((100vw - 1280px)/2 + 40px) 100px;
   }
+}
 
+@mixin responsive-img($init-width, $window-size, $padding) {
+  max-width: calc($init-width / $window-size * (100% + $padding));
 }

@@ -14,46 +14,60 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
-      gap:42px;
       h2 {
         width:70%;
+      }
+    }
+
+    @media (max-width: $desktop-width) {
+      margin-top:60px;
+      flex-direction: column;
+      img {
+        align-self: flex-end;
+      }
+      .text-wrapper {
+        align-self: center;
+        max-width:460px;
       }
     }
 
     @media (max-width: $tablet-width) {
       gap:105px;
       .text-wrapper {
+        gap:42px;
         text-align:center;
         align-items: center;
+        width:90vw;
       }
       img {
-        max-width:260px;
+        @include responsive-img(260, 320, 20px);
       }
     }
-    @media (max-width:$desktop-width) {
-      margin-top:60px;
-      flex-direction: column;
-      img {
-        align-self: flex-end;
-      }
-
+    @media (min-width:$tablet-width) and (max-width: $desktop-width) {
       gap:100px;
       .text-wrapper {
-        max-width:460px;
-        align-self:center;
+        height:322px;
+        text-align:start;
+        align-items:flex-start;
         button {
           align-self:center;
         }
-        img {
-          max-width:570px;
-        }
+      }
+      img {
+        @include responsive-img(570, 768, 60px);
+        max-width:570px;
       }
     }
     @media (min-width:$desktop-width) {
       margin-top:90px;
       flex-direction: row;
+      gap:42px;
       .text-wrapper {
         margin:163px 0 243px;
+        align-self:auto;
+        button {
+          align-self:flex-start;
+        }
       }
     }
   }
@@ -80,6 +94,10 @@
     max-height: 408px;
   }
 
+  @media (max-width:$desktop-width) {
+    flex-direction: column-reverse;
+    align-items:center;
+  }
   @media (max-width: $tablet-width) {
     gap:42px;
     .text-wrapper {
@@ -89,17 +107,24 @@
       h3 {
         text-align:center;
         max-width:250px;
-        height:auto;
       }
     }
     img {
-      max-width:260px;
+      @include responsive-img(260, 320, 20px);
     }
   }
-  @media (max-width: $desktop-width) {
+  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
     gap:80px;
-    flex-direction: column-reverse;
-    align-items:center;
+    .text-wrapper {
+      align-items:flex-start;
+      h3 {
+        max-width:100%;
+        text-align:start;
+      }
+    }
+    img {
+      @include responsive-img(300, 768, 60px);
+    }
   }
   @media (min-width: $desktop-width) {
     flex-direction:row;
@@ -124,8 +149,13 @@
     margin:0 auto;
   }
 
+  @media (max-width: $desktop-width) {
+    .pet:last-of-type {
+      display:none;
+    }
+  }
   @media (max-width: $tablet-width) {
-    .pet:nth-of-type(2), .pet:nth-of-type(3) {
+    .pet:nth-of-type(2) {
       display:none;
     }
     .pets-wrapper {
@@ -140,17 +170,27 @@
       gap:20px;
     }
   }
-  @media (max-width: $desktop-width) {
+  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+    .carousel-wrapper {
+      margin: 60px 0;
+      justify-content: space-between;
+      gap:unset;
+    }
     .pets-wrapper {
       gap:40px;
-      .pet:last-of-type {
-        display: none;
-      }
+      order:0;
+      flex: 0 0 auto;
+    }
+    .pet:nth-of-type(2) {
+      display:block;
     }
   }
   @media (min-width: $desktop-width) {
     .pets-wrapper {
       gap:90px;
+      .pet:last-of-type {
+        display:block;
+      }
     }
   }
 }
@@ -164,12 +204,40 @@
   .icons-wrapper {
     @include flex-center(center);
     flex-wrap:wrap;
-    gap:55px 120px;
     figure {
       margin:0;
       width:auto;
       img {
         margin-bottom:25px;
+      }
+    }
+  }
+  @media (max-width: $tablet-width) {
+    .icons-wrapper {
+      margin: 0 5px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+
+    }
+  }
+  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+    .icons-wrapper {
+      margin:0 39px;
+      gap:55px 60px;
+      @include flex-center(space-around);
+      figure {
+        flex: 1 0 25%;
+      }
+    }
+  }
+  @media (min-width: $desktop-width) {
+    .icons-wrapper {
+      margin:0;
+      gap:55px 120px;
+      justify-content: center;
+      figure {
+        flex:0 0 auto;
       }
     }
   }
