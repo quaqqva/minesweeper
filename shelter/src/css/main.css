@@ -487,10 +487,9 @@ footer {
   background: white;
   display: flex;
   justify-content: center;
-  gap: 10%;
 }
 .about .text-wrapper {
-  width: 430px;
+  max-width: 430px;
   padding-top: 14px;
   display: flex;
   flex-direction: column;
@@ -501,8 +500,42 @@ footer {
   height: 90px;
 }
 .about img {
-  width: 300px;
-  height: 408px;
+  max-width: 300px;
+  max-height: 408px;
+}
+@media (max-width: 768px), (max-width: 1280px) {
+  .about {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    gap: 42px;
+  }
+  .about .text-wrapper {
+    gap: 22px;
+    align-items: center;
+    text-align: justify;
+  }
+  .about .text-wrapper h3 {
+    text-align: center;
+    max-width: 250px;
+    height: auto;
+  }
+  .about img {
+    max-width: 260px;
+  }
+}
+@media (max-width: 1280px) {
+  .about {
+    gap: 80px;
+  }
+}
+@media (min-width: 1280px) {
+  .about {
+    gap: 120px;
+  }
 }
 
 .our-pets {
