@@ -170,14 +170,19 @@ a.on-light:active, a.on-light:target {
   transition: ease-in-out color 0.3s;
   font-size: 20px;
 }
-.contacts-row a img, .locations-row a img {
-  transition: ease-in-out filter 0.3s;
+.contacts-row a svg, .locations-row a svg {
+  fill: #F1CDB3;
+  transition: ease-in-out fill 0.3s;
 }
 .contacts-row a:hover h4, .locations-row a:hover h4 {
   color: white;
 }
-.contacts-row a:hover img, .locations-row a:hover img {
-  filter: hue-rotate(-25.16deg) saturate(31.11%) brightness(117.65%);
+.contacts-row a:hover svg, .locations-row a:hover svg {
+  fill: white;
+}
+
+button {
+  font-size: 17px;
 }
 
 * {
@@ -224,6 +229,9 @@ button {
   transition: ease-in-out background 0.3s, ease-in-out border 0.3s, ease-in-out transform 0.2s;
   background: transparent;
 }
+button svg {
+  fill: #292929;
+}
 button:hover {
   background-color: #FDDCC4;
   border-color: #FDDCC4;
@@ -257,7 +265,7 @@ button:active {
   background-color: transparent;
 }
 
-.right img {
+.right svg {
   transform: rotate(180deg);
 }
 
@@ -317,6 +325,19 @@ button:active {
   transform: scale(0.95);
 }
 
+.burger-btn {
+  transition: transform ease-in-out 0.3s, stroke ease-in-out 0.3s;
+}
+nav .burger-btn {
+  stroke: #F1CDB3;
+}
+.header-pets .burger-btn {
+  stroke: #292929;
+}
+.burger-btn:active, .burger-btn:focus {
+  transform: rotate(90deg);
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -339,13 +360,12 @@ header nav ul {
   header nav ul {
     display: none;
   }
-  header nav .burger-menu {
+  header nav .burger-btn {
     display: inline-block;
-    stroke: #F1CDB3;
   }
 }
 @media (min-width: 768px) {
-  header nav .burger-menu {
+  header nav .burger-btn {
     display: none;
   }
   header nav ul {
@@ -377,13 +397,12 @@ header nav ul {
   .header-pets nav ul {
     display: none;
   }
-  .header-pets nav .burger-menu {
+  .header-pets nav .burger-btn {
     display: inline-block;
-    stroke: #292929;
   }
 }
 @media (min-width: 768px) {
-  .header-pets nav .burger-menu {
+  .header-pets nav .burger-btn {
     display: none;
   }
   .header-pets nav ul {
@@ -469,7 +488,7 @@ footer {
   flex: 1 1 auto;
   margin: 0;
 }
-.contacts-row a img, .locations-row a img {
+.contacts-row a svg, .locations-row a svg {
   margin-right: 1.5rem;
 }
 .contacts-row a h4, .locations-row a h4 {
@@ -539,10 +558,6 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-.start-screen .start-screen-elements img {
-  max-height: 100%;
-  max-width: 100%;
-}
 .start-screen .start-screen-elements .text-wrapper {
   display: flex;
   flex-direction: column;
@@ -608,6 +623,10 @@ footer {
   }
   .start-screen .start-screen-elements .text-wrapper button {
     align-self: flex-start;
+  }
+  .start-screen .start-screen-elements img {
+    max-height: 100%;
+    max-width: 100%;
   }
 }
 
