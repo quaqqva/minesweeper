@@ -5,10 +5,6 @@
   .start-screen-elements {
     display:flex;
     justify-content: space-between;
-    img {
-      max-height:100%;
-      max-width:100%;
-    }
     .text-wrapper {
       display:flex;
       flex-direction: column;
@@ -68,6 +64,10 @@
         button {
           align-self:flex-start;
         }
+      }
+      img {
+        max-height:100%;
+        max-width:100%;
       }
     }
   }

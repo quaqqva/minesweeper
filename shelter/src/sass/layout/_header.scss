@@ -19,15 +19,14 @@ header {
       ul {
         display:none;
       }
-      .burger-menu {
+      .burger-btn {
         display:inline-block;
-        stroke: $color-primary;
       }
     }
   }
   @media (min-width: $tablet-width) {
     nav {
-      .burger-menu {
+      .burger-btn {
         display:none;
       }
       ul {
@@ -46,15 +45,14 @@ header {
       ul {
         display:none;
       }
-      .burger-menu {
+      .burger-btn {
         display:inline-block;
-        stroke: $color-dark-3xl;
       }
     }
   }
   @media (min-width: $tablet-width) {
     nav {
-      .burger-menu {
+      .burger-btn {
         display:none;
       }
       ul {

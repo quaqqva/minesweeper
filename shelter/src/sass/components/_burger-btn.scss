@@ -1,0 +1,13 @@
+.burger-btn {
+  nav & {
+    stroke: $color-primary;
+  }
+  .header-pets & {
+    stroke: $color-dark-3xl;
+  }
+  transition: transform ease-in-out 0.3s, stroke ease-in-out 0.3s;
+
+  &:active, &:focus {
+    transform: rotate(90deg);
+  }
+}
