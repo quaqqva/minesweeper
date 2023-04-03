@@ -1,25 +1,73 @@
 .main-pets {
   @include section-padding;
-  padding-top:80px;
-  padding-bottom: 100px;
   background-color: $color-light-l;
   text-align:center;
   h3 {
-    width:40%;
     margin:0 auto;
   }
 
   .pets-wrapper {
     display:grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 40px;
     grid-row-gap:30px;
-    margin: 60px auto;
+    justify-content: space-evenly;
+
+    .pet {
+      flex-grow:0;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin:42px auto;
+      grid-template-columns: 270px;
+      grid-template-rows:repeat(3, 435px);
+
+      @for $i from 4 through 8 {
+        .pet:nth-of-type(#{$i}) {
+          display:none;
+        }
+      }
+    }
+    @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+      grid-template-columns: 270px 270px;
+      grid-template-rows: repeat(3, 435px);
+      margin: 30px auto 40px;
+
+      @for $i from 4 through 6 {
+        .pet:nth-of-type(#{$i}) {
+          display:block;
+        }
+      }
+      @for $i from 1 through 2 {
+        .pet:nth-last-of-type(#{$i}) {
+          display:none;
+        }
+      }
+    }
+    @media (min-width:$desktop-width) {
+      grid-template-columns: repeat(4, 270px);
+      grid-template-rows: 435px 435px;
+      margin: 60px auto;
+      grid-column-gap: 40px;
+      .pet {
+        display:block;
+      }
+    }
   }
 
   .pets-navigation {
     @include flex-center(center);
-    gap:20px;
+    @media (max-width: $tablet-width) {
+      gap:10px;
+    }
+    @media (min-width: $tablet-width) {
+      gap: 20px;
+    }
   }
+
+  @media (min-width:$tablet-width) and (max-width: $desktop-width) {
+    padding-bottom: 76px;
+  }
+  @media (min-width:$desktop-width) {
+    padding-bottom: 100px;
+  }
+
 }

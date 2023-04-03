@@ -55,20 +55,39 @@ h2, h3, h4, h5 {
 }
 
 h2 {
-  font-size:44px;
   line-height:130%;
+  @media (max-width: $tablet-width) {
+    font-size: 25px;
+  }
+  @media (min-width: $tablet-width) {
+    font-size:44px;
+  }
 }
 
 h3 {
-  font-size: 35px;
   line-height: 130%;
   letter-spacing: 0.06em;
+  @media (max-width: $tablet-width) {
+    font-size: 25px;
+  }
+  @media (min-width:$tablet-width) {
+    font-size: 35px;
+  }
 }
 
 h4, .button-round{
   font-size: 20px;
   line-height: 115%;
   letter-spacing: 0.06em;
+}
+
+h4 {
+  @media (max-width:$tablet-width) {
+    font-size:15px;
+  }
+  @media (min-width:$tablet-width) {
+    font-size: 20px;
+  }
 }
 
 h5 {
@@ -140,11 +159,15 @@ a {
   }
 }
 
+.pet h4 {
+  font-size: 20px;
+}
 
 .contacts-row a, .locations-row a {
   h4 {
     color: $color-primary;
     transition: ease-in-out color 0.3s;
+    font-size:20px;
   }
   img {
     transition: ease-in-out filter 0.3s;

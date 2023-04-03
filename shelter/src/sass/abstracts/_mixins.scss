@@ -10,5 +10,17 @@
 }
 
 @mixin section-padding {
-  padding:0 calc((100vw - 1280px)/2 + 40px);
+  @media (min-width: $mobile-width) {
+    padding: 42px 10px;
+  }
+  @media (min-width: $tablet-width) {
+    padding:80px 30px 100px;
+  }
+  @media (min-width: $desktop-width) {
+    padding:80px calc((100vw - 1280px)/2 + 40px) 100px;
+  }
+}
+
+@mixin responsive-img($init-width, $window-size, $padding) {
+  max-width: calc($init-width / $window-size * (100% + $padding));
 }
