@@ -554,10 +554,6 @@ footer {
   display: flex;
   justify-content: space-between;
 }
-.start-screen .start-screen-elements img {
-  max-height: 100%;
-  max-width: 100%;
-}
 .start-screen .start-screen-elements .text-wrapper {
   display: flex;
   flex-direction: column;
@@ -623,6 +619,10 @@ footer {
   }
   .start-screen .start-screen-elements .text-wrapper button {
     align-self: flex-start;
+  }
+  .start-screen .start-screen-elements img {
+    max-height: 100%;
+    max-width: 100%;
   }
 }
 
