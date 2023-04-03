@@ -1,6 +1,7 @@
 .credit-card-info {
-  width: 349px;
+  max-width:351px;
   height: 43px;
+  padding:10px 15px;
   background-color:$color-primary;
   border-radius:9px;
   @include flex-center(center);
