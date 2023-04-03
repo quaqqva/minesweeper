@@ -1,5 +1,4 @@
 footer {
-  position:relative;
   @include gradient-bg;
   @include section-padding;
   display:flex;
@@ -20,7 +19,6 @@ footer {
     flex-direction:row;
     flex-wrap:wrap;
     justify-content:center;
-    right:0;
     gap:65px 60px;
     img {
       width:auto;
@@ -29,7 +27,6 @@ footer {
   @media (min-width: $desktop-width) {
     padding-top:40px;
     padding-bottom: 0;
-    right:8px;
     gap:160px;
     flex-direction: row;
     flex-wrap:nowrap;
