@@ -14,6 +14,9 @@ button {
   ease-in-out border 0.3s, ease-in-out transform 0.2s;
   background:transparent;
 
+  svg {
+    fill: $color-dark-3xl;
+  }
   &:hover {
     background-color:$color-primary-light;
     border-color:$color-primary-light;
@@ -49,6 +52,6 @@ button {
   }
 }
 
-.right img {
+.right svg {
   transform: rotate(180deg);
 }

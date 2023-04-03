@@ -169,15 +169,16 @@ a {
     transition: ease-in-out color 0.3s;
     font-size:20px;
   }
-  img {
-    transition: ease-in-out filter 0.3s;
+  svg {
+    fill: $color-primary;
+    transition: ease-in-out fill 0.3s;
   }
   &:hover{
     h4 {
       color: $color-light-xl;
     }
-    img {
-      filter: hue-rotate(-25.16deg) saturate(31.11%) brightness(117.65%);
+    svg {
+      fill: $color-light-xl;
     }
   }
 }
