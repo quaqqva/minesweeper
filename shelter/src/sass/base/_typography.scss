@@ -159,11 +159,15 @@ a {
   }
 }
 
+.pet h4 {
+  font-size: 20px;
+}
 
 .contacts-row a, .locations-row a {
   h4 {
     color: $color-primary;
     transition: ease-in-out color 0.3s;
+    font-size:20px;
   }
   img {
     transition: ease-in-out filter 0.3s;
