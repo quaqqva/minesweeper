@@ -717,8 +717,8 @@ footer {
   .our-pets .carousel-wrapper {
     margin: 42px 0;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px 100px;
+    justify-content: space-around;
+    gap: 20px;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
@@ -906,9 +906,8 @@ footer {
 }
 .main-pets .pets-wrapper {
   display: grid;
-  grid-column-gap: 40px;
   grid-row-gap: 30px;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .main-pets .pets-wrapper .pet {
   flex-grow: 0;
@@ -962,6 +961,7 @@ footer {
     grid-template-columns: repeat(4, 270px);
     grid-template-rows: 435px 435px;
     margin: 60px auto;
+    grid-column-gap: 40px;
   }
   .main-pets .pets-wrapper .pet {
     display: block;

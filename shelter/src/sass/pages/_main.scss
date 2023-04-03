@@ -171,8 +171,8 @@
     .carousel-wrapper {
       margin:42px 0;
       flex-wrap:wrap;
-      justify-content:center;
-      gap:20px 100px;
+      justify-content:space-around;
+      gap:20px;
     }
   }
   @media (min-width: $tablet-width) and (max-width: $desktop-width) {
