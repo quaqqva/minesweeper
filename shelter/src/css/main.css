@@ -181,6 +181,10 @@ a.on-light:active, a.on-light:target {
   fill: white;
 }
 
+button {
+  font-size: 17px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
