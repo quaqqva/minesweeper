@@ -352,8 +352,6 @@ header nav ul {
 
 .header-pets {
   background-color: white;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 @media (min-width: 320px) {
   .header-pets {
@@ -387,6 +385,12 @@ header nav ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+@media all {
+  .header-pets {
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 
@@ -453,7 +457,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1 0;
+  flex: 1 0 100%;
   margin: 0;
 }
 .contacts-row a img, .locations-row a img {
@@ -468,9 +472,6 @@ footer {
   }
   .contacts-row h3, .locations-row h3 {
     text-align: center;
-  }
-  .contacts-row a, .locations-row a {
-    flex-basis: 100%;
   }
 }
 @media (min-width: 768px) {
@@ -822,8 +823,6 @@ footer {
 }
 
 .main-pets {
-  padding-top: 80px;
-  padding-bottom: 100px;
   background-color: #F6F6F6;
   text-align: center;
 }
@@ -843,22 +842,49 @@ footer {
   }
 }
 .main-pets h3 {
-  width: 40%;
   margin: 0 auto;
 }
 .main-pets .pets-wrapper {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 40px;
   grid-row-gap: 30px;
-  margin: 60px auto;
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .main-pets .pets-wrapper {
+    margin: 42px auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .main-pets .pets-wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    margin: 30px auto 40px;
+  }
+}
+@media (min-width: 1280px) {
+  .main-pets .pets-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    margin: 60px auto;
+  }
 }
 .main-pets .pets-navigation {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+}
+@media (max-width: 768px) {
+  .main-pets .pets-navigation {
+    gap: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .main-pets .pets-navigation {
+    gap: 20px;
+  }
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

@@ -37,7 +37,7 @@ footer {
   justify-content: space-between;
   a {
     @include flex-center(space-between);
-    flex: 1 0;
+    flex: 1 0 100%;
     margin:0;
     img {
       margin-right:1.5rem;
@@ -51,9 +51,6 @@ footer {
       text-align: center;
     }
     align-items: center;
-    a {
-      flex-basis:100%;
-    }
   }
   @media (min-width: $tablet-width) {
     h3 {

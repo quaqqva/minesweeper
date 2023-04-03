@@ -40,8 +40,6 @@ header {
 .header-pets {
   background-color:$color-light-xl;
   @include section-padding;
-  padding-top:30px;
-  padding-bottom:30px;
 
   @media (max-width: $tablet-width) {
     nav {
@@ -63,5 +61,9 @@ header {
         @include flex-center(space-between);
       }
     }
+  }
+  @media all {
+    padding-top:30px;
+    padding-bottom:30px;
   }
 }
