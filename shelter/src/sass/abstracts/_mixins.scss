@@ -10,10 +10,10 @@
 }
 
 @mixin section-padding {
-  @media (min-width: $mobile-width) {
+  @media (max-width: $tablet-width) {
     padding: 42px 10px;
   }
-  @media (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) and (max-width:$desktop-width) {
     padding:80px 30px 100px;
   }
   @media (min-width: $desktop-width) {

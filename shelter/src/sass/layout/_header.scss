@@ -39,9 +39,8 @@ header {
 }
 
 .header-pets {
-  background-color:$color-light-xl;
   @include section-padding;
-
+  background-color:$color-light-xl;
   @media (max-width: $tablet-width) {
     padding: 30px 20px;
     nav {
@@ -53,7 +52,7 @@ header {
       }
     }
   }
-  @media (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
     padding:30px;
     nav {
       .burger-btn {
