@@ -59,10 +59,16 @@ h2 {
   h2 {
     font-size: 25px;
   }
+  .start-screen h2 {
+    letter-spacing: 0.06em;
+  }
 }
 @media (min-width: 768px) {
   h2 {
     font-size: 44px;
+  }
+  .start-screen h2 {
+    letter-spacing: inherit;
   }
 }
 
@@ -102,6 +108,16 @@ h5 {
   font-size: 15px;
   line-height: 110%;
   letter-spacing: 0.06em;
+}
+@media (max-width: 768px) {
+  .help-donation h5 {
+    letter-spacing: inherit;
+  }
+}
+@media (min-width: 768px) {
+  .help-donation h5 {
+    letter-spacing: 0.06em;
+  }
 }
 
 .paragraph-l {
@@ -692,6 +708,7 @@ footer {
   }
   .about .text-wrapper {
     align-items: flex-start;
+    text-align: start;
     padding: 0;
   }
   .about .text-wrapper h3 {
