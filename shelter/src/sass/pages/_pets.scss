@@ -50,6 +50,11 @@
       .pet {
         display:block;
       }
+      @for $i from 1 through 2 {
+        .pet:nth-last-of-type(#{$i}) {
+          display:block;
+        }
+      }
     }
   }
 
