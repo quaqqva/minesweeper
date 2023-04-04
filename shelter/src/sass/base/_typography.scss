@@ -58,9 +58,15 @@ h2 {
   line-height:130%;
   @media (max-width: $tablet-width) {
     font-size: 25px;
+    .start-screen & {
+      letter-spacing: 0.06em;
+    }
   }
   @media (min-width: $tablet-width) {
     font-size:44px;
+    .start-screen & {
+      letter-spacing: inherit;
+    }
   }
 }
 
@@ -94,6 +100,17 @@ h5 {
   font-size: 15px;
   line-height: 110%;
   letter-spacing: 0.06em;
+
+  @media (max-width:$tablet-width) {
+    .help-donation & {
+      letter-spacing: inherit;
+    }
+  }
+  @media (min-width:$tablet-width) {
+    .help-donation & {
+      letter-spacing: 0.06em;
+    }
+  }
 }
 
 .paragraph-l {
