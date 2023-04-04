@@ -17,7 +17,7 @@
     padding:80px 30px 100px;
   }
   @media (min-width: $desktop-width) {
-    padding:80px calc((100vw - 1280px)/2 + 40px) 100px;
+    padding:80px calc((100% - 1280px)/2 + 40px) 100px;
   }
 }
 

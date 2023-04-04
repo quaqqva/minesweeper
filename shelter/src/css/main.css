@@ -223,7 +223,7 @@ html {
 }
 @media (min-width: 1280px) {
   section {
-    padding: 80px calc((100vw - 1280px) / 2 + 40px) 100px;
+    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
   }
 }
 section h3 {
@@ -412,7 +412,7 @@ header nav ul {
 }
 @media (min-width: 1280px) {
   .header-pets {
-    padding: 80px calc((100vw - 1280px) / 2 + 40px) 100px;
+    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
   }
 }
 @media (max-width: 768px) {
@@ -462,7 +462,7 @@ footer {
 }
 @media (min-width: 1280px) {
   footer {
-    padding: 80px calc((100vw - 1280px) / 2 + 40px) 100px;
+    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
   }
 }
 @media (max-width: 1280px) {
@@ -946,7 +946,7 @@ footer {
 }
 @media (min-width: 1280px) {
   .main-pets {
-    padding: 80px calc((100vw - 1280px) / 2 + 40px) 100px;
+    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
   }
 }
 .main-pets h3 {
