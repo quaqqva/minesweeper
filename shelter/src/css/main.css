@@ -357,6 +357,9 @@ header nav ul {
   gap: 35px;
 }
 @media (max-width: 768px) {
+  header {
+    padding: 0 10px;
+  }
   header nav ul {
     display: none;
   }
@@ -365,6 +368,9 @@ header nav ul {
   }
 }
 @media (min-width: 768px) {
+  header {
+    padding: 0;
+  }
   header nav .burger-btn {
     display: none;
   }
@@ -394,6 +400,9 @@ header nav ul {
   }
 }
 @media (max-width: 768px) {
+  .header-pets {
+    padding: 30px 20px;
+  }
   .header-pets nav ul {
     display: none;
   }
@@ -402,6 +411,9 @@ header nav ul {
   }
 }
 @media (min-width: 768px) {
+  .header-pets {
+    padding: 30px;
+  }
   .header-pets nav .burger-btn {
     display: none;
   }
@@ -736,8 +748,8 @@ footer {
   .our-pets .carousel-wrapper {
     margin: 42px 0;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
+    justify-content: center;
+    gap: 20px calc(0.25 * (100% + 20px));
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
