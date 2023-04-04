@@ -997,6 +997,12 @@ footer {
   .main-pets .pets-wrapper .pet {
     display: block;
   }
+  .main-pets .pets-wrapper .pet:nth-last-of-type(1) {
+    display: block;
+  }
+  .main-pets .pets-wrapper .pet:nth-last-of-type(2) {
+    display: block;
+  }
 }
 .main-pets .pets-navigation {
   display: flex;
