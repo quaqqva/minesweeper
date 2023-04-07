@@ -63,6 +63,10 @@ header {
       }
     }
   }
+  @media (min-width: $desktop-width) {
+    padding-left:40px;
+    padding-right:40px;
+  }
   @media all {
     padding-top:30px;
     padding-bottom:30px;
