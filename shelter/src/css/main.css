@@ -439,6 +439,12 @@ header nav ul {
     align-items: center;
   }
 }
+@media (min-width: 1280px) {
+  .header-pets {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 @media all {
   .header-pets {
     padding-top: 30px;
