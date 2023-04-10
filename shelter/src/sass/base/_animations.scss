@@ -1,0 +1,12 @@
+.rotate90deg {
+    transform: rotate(90deg);
+    .header-pets &{
+        .burger-btn-line {
+            border-color: $color-primary !important;
+        }
+    }
+}
+
+.show-menu {
+    transform: translateX(-100%);
+}

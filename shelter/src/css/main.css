@@ -241,6 +241,17 @@ section h3 {
   margin-top: 0;
 }
 
+.rotate90deg {
+  transform: rotate(90deg);
+}
+.header-pets .rotate90deg .burger-btn-line {
+  border-color: #F1CDB3 !important;
+}
+
+.show-menu {
+  transform: translateX(-100%);
+}
+
 button {
   line-height: 130%;
   letter-spacing: 0.06em;
@@ -359,12 +370,13 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
   align-self: center;
-  z-index: 5;
+  z-index: 6;
   background: none;
   border: none;
   padding: 0;
   width: 30px;
   height: 22px;
+  transition: transform ease-in-out 1s;
 }
 .burger-btn:hover {
   background: none;
@@ -378,6 +390,7 @@ button:active {
   width: 30px;
   height: 0;
   border: 1px solid;
+  transition: border-color ease-in-out 1s;
 }
 nav .burger-btn-line {
   border-color: #F1CDB3;
@@ -391,8 +404,11 @@ nav .burger-btn-line {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 100%;
+  display: flex;
+  justify-content: flex-end;
   z-index: 4;
+  transition: transform ease-in-out 1s;
 }
 
 .menu-wrapper {
@@ -402,6 +418,7 @@ nav .burger-btn-line {
   justify-content: center;
   align-items: center;
   background: #292929;
+  z-index: 5;
 }
 
 .mobile-menu {
@@ -471,6 +488,21 @@ header nav ul {
 }
 @media (max-width: 768px) {
   .header-pets {
+    padding: 42px 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header-pets {
+    padding: 80px 30px 100px;
+  }
+}
+@media (min-width: 1280px) {
+  .header-pets {
+    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
+  }
+}
+@media (max-width: 768px) {
+  .header-pets {
     padding: 30px 20px;
   }
   .header-pets nav {
@@ -499,7 +531,7 @@ header nav ul {
     align-items: center;
   }
 }
-@media (min-width: 1280px) {
+@media (width: 1280px) {
   .header-pets {
     padding-left: 40px;
     padding-right: 40px;
@@ -509,21 +541,6 @@ header nav ul {
   .header-pets {
     padding-top: 30px;
     padding-bottom: 30px;
-  }
-}
-@media (max-width: 768px) {
-  .header-pets {
-    padding: 42px 10px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1280px) {
-  .header-pets {
-    padding: 80px 30px 100px;
-  }
-}
-@media (min-width: 1280px) {
-  .header-pets {
-    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
   }
 }
 

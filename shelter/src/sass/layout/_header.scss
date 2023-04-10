@@ -42,6 +42,7 @@ header {
 
 .header-pets {
   background-color:$color-light-xl;
+  @include section-padding;
   @media (max-width: $tablet-width) {
     padding: 30px 20px;
     nav {
@@ -66,7 +67,7 @@ header {
       }
     }
   }
-  @media (min-width: $desktop-width) {
+  @media (width: $desktop-width) {
     padding-left:40px;
     padding-right:40px;
   }
@@ -74,5 +75,4 @@ header {
     padding-top:30px;
     padding-bottom:30px;
   }
-  @include section-padding;
 }

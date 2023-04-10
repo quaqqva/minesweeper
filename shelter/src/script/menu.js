@@ -1,48 +1,95 @@
 function showMenu() {
-    let menuHTML = 
+    let pageName = document.location.pathname.split('/').pop();
+    let menuHTML = pageName === "index.html"?
 `
-    <div class = "menu-screen">
-        <div class = "menu-wrapper">
+    <div class = "menu-wrapper">
         <nav class = "mobile-menu">
-                <ul>
-                    <li>
-                        <span class="paragraph-mobile-menu initialized">
-                            About the shelter
-                        </span>
-                    </li>
-                    <li>
-                        <a class="paragraph-mobile-menu" href="our-pets.html">
-                            Our Pets
-                        </a>
-                    </li>
-                    <li>
-                        <a class="paragraph-mobile-menu" href="#help-items">Help the shelter</a>
-                    </li>
-                    <li>
-                        <a class="paragraph-mobile-menu" href="#footer">Contacts</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+            <ul>
+                <li>
+                    <span class="paragraph-mobile-menu initialized">
+                        About the shelter
+                    </span>
+                </li>
+                <li>
+                    <a class="paragraph-mobile-menu" href="our-pets.html">
+                        Our Pets
+                    </a>
+                </li>
+                <li>
+                    <a class="paragraph-mobile-menu" href="#help-items">Help the shelter</a>
+                </li>
+                <li>
+                    <a class="paragraph-mobile-menu" href="#footer">Contacts</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+`:
+`
+    <div class = "menu-wrapper">
+        <nav class = "mobile-menu">
+            <ul>
+                <li>
+                    <a class="paragraph-mobile-menu" href="index.html">
+                        About the shelter
+                    </a>
+                </li>
+                <li>
+                    <span class="paragraph-mobile-menu initialized">Our Pets</span>
+                </li>
+                <li>
+                    <a class="paragraph-mobile-menu" href="index.html#help-items">
+                        Help the shelter
+                    </a>
+                </li>
+                <li>
+                    <a class="paragraph-mobile-menu" href="#footer">Contacts</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 `;
+    //Запрет прокрутки
     document.body.style.overflow = 'hidden';
+    //Создаём меню и добавляем в док
     let menuScreen = document.createElement('div');
+    menuScreen.classList.add('menu-screen');
+    menuScreen.innerHTML = menuHTML;
     document.body.prepend(menuScreen);
-    menuScreen.outerHTML = menuHTML;
-
-    //Привязка нового события
-    burgerBtn.removeEventListener("click", this);
-    document.querySelector(".burger-btn").addEventListener("click", hideMenu);
+    //Элемент не успевает создаться без нового стиля
+    setTimeout(() => {
+        //Анимации в ход
+        burgerBtn.classList.toggle("rotate90deg");
+        menuScreen.classList.toggle("show-menu");
+        //Привязка нового события
+        burgerBtn.removeEventListener("click", showMenu);
+        burgerBtn.addEventListener("click", hideMenu);
+    }, 5);
+    //Вешаем закрытие на клик в стороне
+    menuScreen.addEventListener('click', (event) => {
+        if (event.target.classList[0] === 'menu-screen')
+            hideMenu();
+    });
+    //Вешаем закрытие на клик по ссылке
+    document.querySelector(".mobile-menu ul").addEventListener("click", (event) => {
+        if (event.target !== event.currentTarget)
+            hideMenu();
+    });
 }
 
 function hideMenu() {
     let menuScreen = document.querySelector(".menu-screen");
-    document.body.removeChild(menuScreen);
-
-    //Привязка нового события
-    burgetBtn.removeEventListener("click", this);
-    burgerBtn.addEventListener("click", showMenu);
+    burgerBtn.classList.toggle("rotate90deg");
+    menuScreen.classList.toggle("show-menu");
+    //Анимация кончится, и тогда...
+    setTimeout(() => {
+        document.body.removeChild(menuScreen);
+        //Привязка нового события
+        burgerBtn.removeEventListener("click", hideMenu);
+        burgerBtn.addEventListener("click", showMenu);
+        //Вернём прокрутку
+        document.body.style.overflow = '';
+    }, 1000);
 }
 
 let burgerBtn = document.querySelector(".burger-btn");

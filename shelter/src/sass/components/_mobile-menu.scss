@@ -3,8 +3,11 @@
     height:100vh;
     position: fixed;
     top:0;
-    left:0;
+    left:100%;
+    display:flex;
+    justify-content: flex-end;
     z-index: 4;
+    transition: transform ease-in-out 1s;
 }
 
 .menu-wrapper {
@@ -14,6 +17,7 @@
     justify-content: center;
     align-items: center;
     background:$color-dark-3xl;
+    z-index: 5;
 }
 
 .mobile-menu {
