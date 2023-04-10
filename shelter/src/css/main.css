@@ -249,7 +249,11 @@ section h3 {
 }
 
 .show-menu {
-  transform: translateX(-100%);
+  transform: translateX(0) !important;
+}
+
+.show-menu-screen {
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 button {
@@ -404,11 +408,12 @@ nav .burger-btn-line {
   height: 100vh;
   position: fixed;
   top: 0;
-  left: 100%;
+  left: 0;
   display: flex;
   justify-content: flex-end;
   z-index: 4;
-  transition: transform ease-in-out 1s;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color ease-in-out 1s;
 }
 
 .menu-wrapper {
@@ -419,6 +424,8 @@ nav .burger-btn-line {
   align-items: center;
   background: #292929;
   z-index: 5;
+  transform: translateX(320px);
+  transition: transform ease-in-out 1s;
 }
 
 .mobile-menu {

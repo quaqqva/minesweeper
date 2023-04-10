@@ -3,11 +3,12 @@
     height:100vh;
     position: fixed;
     top:0;
-    left:100%;
+    left:0;
     display:flex;
     justify-content: flex-end;
     z-index: 4;
-    transition: transform ease-in-out 1s;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color ease-in-out 1s;
 }
 
 .menu-wrapper {
@@ -16,8 +17,10 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    background:$color-dark-3xl;
+    background: $color-dark-3xl;
     z-index: 5;
+    transform: translateX(320px);
+    transition: transform ease-in-out 1s;
 }
 
 .mobile-menu {

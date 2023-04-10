@@ -60,7 +60,8 @@ function showMenu() {
     setTimeout(() => {
         //Анимации в ход
         burgerBtn.classList.toggle("rotate90deg");
-        menuScreen.classList.toggle("show-menu");
+        document.querySelector('.menu-wrapper').classList.toggle("show-menu");
+        menuScreen.classList.toggle('show-menu-screen');
         //Привязка нового события
         burgerBtn.removeEventListener("click", showMenu);
         burgerBtn.addEventListener("click", hideMenu);
@@ -80,7 +81,8 @@ function showMenu() {
 function hideMenu() {
     let menuScreen = document.querySelector(".menu-screen");
     burgerBtn.classList.toggle("rotate90deg");
-    menuScreen.classList.toggle("show-menu");
+    menuScreen.classList.toggle("show-menu-screen");
+    document.querySelector('.menu-wrapper').classList.toggle("show-menu");
     //Анимация кончится, и тогда...
     setTimeout(() => {
         document.body.removeChild(menuScreen);
