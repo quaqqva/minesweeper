@@ -299,6 +299,9 @@ button:active {
   margin-bottom: 25px;
   border-radius: 9px 9px 0 0;
 }
+.pet button:active {
+  transform: none !important;
+}
 .pet figcaption {
   text-align: center;
 }
@@ -402,21 +405,6 @@ header nav ul {
 }
 @media (max-width: 768px) {
   .header-pets {
-    padding: 42px 10px;
-  }
-}
-@media (min-width: 768px) and (max-width: 1280px) {
-  .header-pets {
-    padding: 80px 30px 100px;
-  }
-}
-@media (min-width: 1280px) {
-  .header-pets {
-    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
-  }
-}
-@media (max-width: 768px) {
-  .header-pets {
     padding: 30px 20px;
   }
   .header-pets nav ul {
@@ -449,6 +437,21 @@ header nav ul {
   .header-pets {
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .header-pets {
+    padding: 42px 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .header-pets {
+    padding: 80px 30px 100px;
+  }
+}
+@media (min-width: 1280px) {
+  .header-pets {
+    padding: 80px calc((100% - 1280px) / 2 + 40px) 100px;
   }
 }
 
@@ -1360,6 +1363,4 @@ template {
  */
 [hidden] {
   display: none;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

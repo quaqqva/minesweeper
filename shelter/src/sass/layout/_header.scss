@@ -39,7 +39,6 @@ header {
 }
 
 .header-pets {
-  @include section-padding;
   background-color:$color-light-xl;
   @media (max-width: $tablet-width) {
     padding: 30px 20px;
@@ -71,4 +70,5 @@ header {
     padding-top:30px;
     padding-bottom:30px;
   }
+  @include section-padding;
 }
