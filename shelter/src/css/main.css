@@ -201,6 +201,17 @@ button {
   font-size: 17px;
 }
 
+.paragraph-mobile-menu {
+  font-family: "Arial", sans-serif;
+  font-size: 32px;
+  line-height: 160%;
+  color: #CDCDCD;
+}
+.paragraph-mobile-menu.initialized {
+  color: #FAFAFA;
+  border-bottom: 3px solid #F1CDB3;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -348,6 +359,7 @@ button:active {
   flex-direction: column;
   justify-content: space-between;
   align-self: center;
+  z-index: 5;
   background: none;
   border: none;
   padding: 0;
@@ -372,6 +384,37 @@ nav .burger-btn-line {
 }
 .header-pets .burger-btn-line {
   border-color: #292929;
+}
+
+.menu-screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.menu-wrapper {
+  width: 320px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #292929;
+}
+
+.mobile-menu {
+  width: 243px;
+  height: 327px;
+  text-align: center;
+}
+.mobile-menu ul {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 }
 
 header {

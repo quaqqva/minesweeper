@@ -1,0 +1,28 @@
+.menu-screen {
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 4;
+}
+
+.menu-wrapper {
+    width:320px;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:$color-dark-3xl;
+}
+
+.mobile-menu {
+    width: 243px;
+    height: 327px;
+    text-align: center;
+    ul {
+        height:100%;
+        @include flex-center(space-between);
+        flex-direction: column;
+    }
+}
