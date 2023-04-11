@@ -147,16 +147,9 @@
   .carousel-wrapper {
     @include flex-center(space-between);
     margin:60px 0;
-    .pets-wrapper-wrapper {
-      overflow: hidden;
-      max-height: 435px;
-      width:auto;
-    }
     .pets-wrapper {
-      display:inline-flex;
+      display:flex;
       position: relative;
-      left:0;
-      top:0;
       transition: left ease-in-out 2s;
     }
   }
@@ -164,19 +157,21 @@
     margin:0 auto;
   }
 
-  @media (max-width: $desktop-width) {
-    .pet:last-of-type {
-      display:none;
-    }
+  .slider-wrapper {
+    width:100%;
+    overflow-x:clip;
+    overflow-y: visible;
   }
+
+
   @media (max-width: $tablet-width) {
-    .pet:nth-of-type(2) {
-      display:none;
-    }
-    .pets-wrapper {
+    .slider-wrapper {
       order:-1;
-      flex:1 0 100%;
-      justify-content: center;
+      flex:1 0 270px;
+      margin:0 calc((100vw - 270px)/2);
+    }
+    .pets-wrapper {  
+      gap:20px;
     }
     .carousel-wrapper {
       margin:42px 0;
@@ -191,21 +186,23 @@
       justify-content: space-between;
       gap:unset;
     }
-    .pets-wrapper {
-      gap:40px;
+    .slider-wrapper {
+      width:calc(270px * 2 + 40px);
       order:0;
       flex: 0 0 auto;
+      margin:0;
     }
-    .pet:nth-of-type(2) {
-      display:block;
+    .pets-wrapper {
+      gap:40px;
+      justify-content: flex-start;
     }
   }
   @media (min-width: $desktop-width) {
+    .slider-wrapper {
+      width:calc(270px * 3 + 90px * 2);
+    }
     .pets-wrapper {
       gap:90px;
-      .pet:last-of-type {
-        display:block;
-      }
     }
   }
 }

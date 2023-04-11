@@ -1,3 +1,10 @@
+const mobileQuery = window.matchMedia("(max-width: 767px)"),
+      tabletQuery = window.matchMedia("(min-width: 768px) and (max-width:1279px"),
+      desktopQuery = window.matchMedia("(min-width:1280px");
+[mobileQuery, tabletQuery, desktopQuery].forEach(
+    query => query.addEventListener("change", () => { console.log("событие");retreiveOffset()})
+);
+
 function generateRandoms(data, previousData) {
     const getRandomNumber = (max) => Math.floor(Math.random() * max);
     let petsCount = 3, result = [];
@@ -34,44 +41,73 @@ function getCard(pet) {
 
 const generateCards = (data) => data.map(pet => getCard(pet));
 
-function getNewWrapper(cards) {
-    let wrapper = document.createElement('div');
-    wrapper.classList.add('pets-wrapper');
-    wrapper.append(...cards);
-    return wrapper;
+function refreshCardDisplays() {
+    let i = 1;
+    for (let element of petsWrapper.children) {
+        if (tabletQuery.matches && i%3 === 0)
+            element.style.display = 'none';
+        else if (mobileQuery.matches && (i%3 !== 1))
+            element.style.display = 'none';
+        else
+            element.style.display = 'block';
+        i++;
+    }
 }
 
-const getOppositeDirection = (direction) => direction === "left"?"right":"left";
+function getOffset(double) {
+    refreshCardDisplays();
+    let gap = window.getComputedStyle(petsWrapper).getPropertyValue('gap');
+    return `calc(${double?"-2 * ":"-1 * "}(${sliderWrapper.clientWidth}px + ${gap}))`;
+}
+
+function retreiveOffset() {
+    petsWrapper.classList.toggle("no-transition");
+    petsWrapper.style.left = getOffset(false);
+    setTimeout(() => {
+        petsWrapper.classList.toggle("no-transition");
+    }, 100);
+        
+}
 
 function slide(event) {
-    let direction = event.target.classList.value.split(' ')[1], 
-        oldWrapper = document.querySelector(".pets-wrapper"),
-        newWrapper = getNewWrapper(lastDirection !== direction && lastDirection !== ""?previousTriple:
-        generateCards(generateRandoms(structuredClone(petsArr),oldWrapper.children)));
-    //запоминаем предыдущие значения
-    previousTriple = oldWrapper.children;
-    lastDirection = direction;
-    //вставляем 
-    oldWrapper.after(newWrapper);
-    //прошлый двигается в направлении слайдера
-    oldWrapper.classList.toggle(`slider-slide-${direction}`);
-    //новый начинает из противоположного
-    newWrapper.classList.toggle(`slider-slide-${getOppositeDirection(direction)}`);
-    newWrapper.classList.toggle('top-correct');
-    newWrapper.classList.toggle(`slider-slide-${getOppositeDirection(direction)}`);
+    let direction = event.target.classList.value.split(' ')[1];
     
-    setTimeout(() => {
-        oldWrapper.remove();
-        newWrapper.classList.toggle('top-correct');
-    }, 2000);
+    if (direction === "left") {
+        nextCards = currentCards;
+        currentCards = previousCards;
+        previousCards = generateCards(generateRandoms(structuredClone(pets), currentCards));
+
+        petsWrapper.style.left = '0';
+        setTimeout(() => {
+            petsWrapper.prepend(...previousCards);
+            for (let i = 0; i < 3; i++)
+                petsWrapper.removeChild(petsWrapper.lastChild);
+            retreiveOffset();
+        }, 2000);   
+    }
+    else {
+        previousCards = currentCards;
+        currentCards = nextCards;
+        nextCards = generateCards(generateRandoms(structuredClone(pets), currentCards));
+
+        petsWrapper.style.left = getOffset(true);
+        setTimeout(() => {
+            petsWrapper.append(...nextCards);
+            for (let i = 0; i < 3; i++)
+                petsWrapper.removeChild(petsWrapper.firstChild);
+            retreiveOffset();
+        }, 2000);
+    }
 }
 
 
-let petsArr = pets;
-let randomData = generateRandoms(structuredClone(petsArr), null);
-let previousTriple = generateCards(randomData), lastDirection = "";
-document.querySelector(".pets-wrapper").append(...previousTriple);
-
+let previousCards = generateCards(generateRandoms(structuredClone(pets), null)),
+    currentCards = generateCards(generateRandoms(structuredClone(pets), previousCards)),
+    nextCards = generateCards(generateRandoms(structuredClone(pets), currentCards)),
+    petsWrapper = document.querySelector(".pets-wrapper"),
+    sliderWrapper = document.querySelector(".slider-wrapper");
+petsWrapper.append(...previousCards, ...currentCards, ...nextCards);
+petsWrapper.style.left = getOffset(false);
 document.querySelector(".button-round.left").addEventListener('click', slide);
 document.querySelector(".button-round.right").addEventListener('click', slide);
 

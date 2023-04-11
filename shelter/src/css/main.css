@@ -256,16 +256,11 @@ section h3 {
   background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
-.slider-slide-left {
-  left: -990px !important;
-}
-
-.slider-slide-right {
-  left: 990px !important;
-}
-
-.top-correct {
-  top: -435px !important;
+.no-transition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 button {
@@ -330,6 +325,7 @@ button:active {
   margin: 0;
   background-color: #FAFAFA;
   border-radius: 9px;
+  flex: 0 0 270px;
   transition: transform ease-in-out 0.3s, box-shadow ease-in-out 0.3s, background-color ease-in-out 0.3s;
 }
 .pet img {
@@ -859,34 +855,27 @@ footer {
   align-items: center;
   margin: 60px 0;
 }
-.our-pets .carousel-wrapper .pets-wrapper-wrapper {
-  overflow: hidden;
-  max-height: 435px;
-  width: auto;
-}
 .our-pets .carousel-wrapper .pets-wrapper {
-  display: inline-flex;
+  display: flex;
   position: relative;
-  left: 0;
-  top: 0;
   transition: left ease-in-out 2s;
 }
 .our-pets > button {
   margin: 0 auto;
 }
-@media (max-width: 1280px) {
-  .our-pets .pet:last-of-type {
-    display: none;
-  }
+.our-pets .slider-wrapper {
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 @media (max-width: 768px) {
-  .our-pets .pet:nth-of-type(2) {
-    display: none;
+  .our-pets .slider-wrapper {
+    order: -1;
+    flex: 1 0 270px;
+    margin: 0 calc((100vw - 270px) / 2);
   }
   .our-pets .pets-wrapper {
-    order: -1;
-    flex: 1 0 100%;
-    justify-content: center;
+    gap: 20px;
   }
   .our-pets .carousel-wrapper {
     margin: 42px 0;
@@ -901,21 +890,23 @@ footer {
     justify-content: space-between;
     gap: unset;
   }
-  .our-pets .pets-wrapper {
-    gap: 40px;
+  .our-pets .slider-wrapper {
+    width: 580px;
     order: 0;
     flex: 0 0 auto;
+    margin: 0;
   }
-  .our-pets .pet:nth-of-type(2) {
-    display: block;
+  .our-pets .pets-wrapper {
+    gap: 40px;
+    justify-content: flex-start;
   }
 }
 @media (min-width: 1280px) {
+  .our-pets .slider-wrapper {
+    width: 990px;
+  }
   .our-pets .pets-wrapper {
     gap: 90px;
-  }
-  .our-pets .pets-wrapper .pet:last-of-type {
-    display: block;
   }
 }
 

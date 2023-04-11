@@ -15,15 +15,10 @@
     background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
-.slider-slide-left {
-    left:-990px !important;
-}
-
-.slider-slide-right {
-    left: 990px !important;
-}
-
-.top-correct {
-    top: -435px !important;
-}
+.no-transition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
 
