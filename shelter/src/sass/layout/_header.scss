@@ -17,17 +17,19 @@ header {
   @media (max-width: $tablet-width) {
     padding: 0 10px;
     nav {
+      display:flex;
       ul {
         display:none;
       }
       .burger-btn {
-        display:inline-block;
+        display:inline-flex;
       }
     }
   }
   @media (min-width: $tablet-width) {
     padding:0;
     nav {
+      display:inline-block;
       .burger-btn {
         display:none;
       }
@@ -40,20 +42,23 @@ header {
 
 .header-pets {
   background-color:$color-light-xl;
+  @include section-padding;
   @media (max-width: $tablet-width) {
     padding: 30px 20px;
     nav {
+      display:flex;
       ul {
         display:none;
       }
       .burger-btn {
-        display:inline-block;
+        display:inline-flex;
       }
     }
   }
   @media (min-width: $tablet-width) and (max-width: $desktop-width) {
     padding:30px;
     nav {
+      display:inline-block;
       .burger-btn {
         display:none;
       }
@@ -62,7 +67,7 @@ header {
       }
     }
   }
-  @media (min-width: $desktop-width) {
+  @media (width: $desktop-width) {
     padding-left:40px;
     padding-right:40px;
   }
@@ -70,5 +75,4 @@ header {
     padding-top:30px;
     padding-bottom:30px;
   }
-  @include section-padding;
 }

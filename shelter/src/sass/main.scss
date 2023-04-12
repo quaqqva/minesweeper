@@ -4,11 +4,14 @@
 
 @import "base/_typography.scss";
 @import "base/_base.scss";
+@import "base/_animations.scss";
 
 @import "components/_buttons.scss";
 @import "components/_pet.scss";
 @import "components/_credit-card";
 @import "components/_burger-btn";
+@import "components/_mobile-menu.scss";
+@import "components/_modal.scss";
 
 @import "layout/_header.scss";
 @import "layout/_footer.scss";
