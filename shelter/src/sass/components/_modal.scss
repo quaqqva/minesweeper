@@ -7,6 +7,17 @@
         right:-32px;
         top:-52px;
     }
+
+    @media (max-width : $tablet-width) {
+        button {
+            right:-32px;
+        }
+    }
+    @media (min-width: $tablet-width) {
+        button {
+            right:-42px;
+        }
+    }
 }
 
 .modal {
@@ -19,6 +30,9 @@
 
     img {
         width:auto;
+    }
+    h4 {
+        font-size:20px;
     }
     .text-wrapper {
         display:flex;
@@ -51,6 +65,11 @@
         }
         .text-wrapper {
             margin: 10px;
+            gap:20px;
+            .header {
+                text-align: center;
+                align-self: center;
+            }
         }
         width: 240px;
     }
@@ -65,6 +84,10 @@
             margin: 10px 10px 0 10px;
             ul {
                 gap:5px;
+            }
+            .header {
+                text-align: start;
+                align-self: flex-start;
             }
         }
     }
