@@ -20,7 +20,6 @@ function generateRandoms(data, previousData, petsCount) {
 }
 
 function generatePages(data) {
-    console.log("Генерирую страницы...");
     let pagesCount = 6, elemsPerPages = 8, previousPage = null,
     result = new Array(pagesCount*elemsPerPages);
     for (let i = 0; i < pagesCount; i++) {
@@ -29,7 +28,6 @@ function generatePages(data) {
             result[i*elemsPerPages + j] = page[j];
         previousPage = page;
     }
-    console.log("Страницы сгенерированы");
     return result;
 }
 
@@ -65,11 +63,10 @@ function separatePages(pages) {
     else
         pageCount = 6;
     elemPerPage = pages.length / pageCount;
-    console.log(pageCount);
     for (let i = 0; i < pageCount; i++) {
         let page = [];
         for (let j = 0; j < elemPerPage; j++) {
-            page.push(pages[i*pageCount+j]);
+            page.push(pages[i*elemPerPage+j]);
         }
         result.push(page);
     }
@@ -77,15 +74,20 @@ function separatePages(pages) {
 }
 
 function switchToPage(pageNum) {
-    let petsWrapper = document.querySelector(".pets-wrapper");
-    petsWrapper.replaceChildren(...pages[pageNum-1]);
+    let petsWrapper = document.querySelector(".pets-wrapper"),
+    page = pages[pageNum - 1];
+    if (petsWrapper.children.length === 0)
+        petsWrapper.append(...page);
+    else
+        petsWrapper.replaceChildren(...page);
 
     pageDiv.innerHTML = pageNum;
 
     btnFirstPage.removeAttribute("disabled");
     btnPrevPage.removeAttribute("disabled");
     btnNextPage.removeAttribute("disabled");
-        btnLastPage.removeAttribute("disabled");
+    btnLastPage.removeAttribute("disabled");
+
     if (pageNum === 1) {
         btnFirstPage.setAttribute("disabled", "true");
         btnPrevPage.setAttribute("disabled", "true");
@@ -109,12 +111,13 @@ let btnFirstPage = document.getElementById("btnFirstPage"),
     pageDiv = document.getElementById("pageNumber"),
     btnNextPage = document.getElementById("btnNextPage"),
     btnLastPage = document.getElementById("btnLastPage"),
-    cards = getCards(generatePages(structuredClone(pets))),
+    cards = generatePages(structuredClone(pets)),
     pages = separatePages(cards),
     pageNum = 1;
 
 btnFirstPage.addEventListener('click', () => {
     switchToPage(1);
+    pageNum = 1;
 });
 btnPrevPage.addEventListener('click', () => {
     switchToPage(--pageNum);
@@ -124,4 +127,7 @@ btnNextPage.addEventListener('click', () => {
 });
 btnLastPage.addEventListener('click', () => {
     switchToPage(pages.length);
+    pageNum = pages.length;
 })
+
+resetPages();
