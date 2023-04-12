@@ -9,6 +9,10 @@ function generateRandoms(data, previousData, petsCount) {
     const getRandomNumber = (max) => Math.floor(Math.random() * max);
     let result = [];
     //Исключаем совпадения с прошлыми данными    
+    if (petsCount === 3 && previousData) {
+        for (let element of previousData)
+            data.splice(data.findIndex(pet => pet.name === element.querySelector('h4').innerHTML), 1);
+    }
     //Выбираем новые
     for (let i = 0; i < petsCount; i++) {
         let petIndex = getRandomNumber(data.length);
@@ -19,8 +23,8 @@ function generateRandoms(data, previousData, petsCount) {
     return result === previousData?generateRandoms(data , previousData, petsCount):result;
 }
 
-function generatePages(data) {
-    let pagesCount = 6, elemsPerPages = 8, previousPage = null,
+function generatePages(data, pagesCount) {
+    let elemsPerPages = 48/pagesCount, previousPage = null,
     result = new Array(pagesCount*elemsPerPages);
     for (let i = 0; i < pagesCount; i++) {
         let page = getCards(generateRandoms(structuredClone(data), previousPage, elemsPerPages));
@@ -31,7 +35,6 @@ function generatePages(data) {
     return result;
 }
 
-//Генерация карточки
 function getCard(pet) {
     let cardNode = document.createElement('figure');
     cardNode.classList.add('pet');
@@ -48,21 +51,26 @@ function getCard(pet) {
 }
 
 const getCards = (data) => data.map(pet => getCard(pet));
-
-function resetPages() {
-    pages = separatePages(cards);
-    switchToPage(1);
-    pageNum = 1;
-}
-
-function separatePages(pages) {
-    let pageCount, elemPerPage, result = [];
+function getPageCount() {
+    let pageCount;
     if (mobileQuery.matches)
         pageCount = 16;
     else if (tabletQuery.matches)
         pageCount = 8;
     else
         pageCount = 6;
+    return pageCount;
+}
+function resetPages() {
+    pages = separatePages(generatePages(pets, getPageCount()));
+    setPages(pages);
+    switchToPage(1);
+    pageNum = 1;
+}
+
+function separatePages(pages) {
+    let pageCount = getPageCount(),
+     elemPerPage, result = [];
     elemPerPage = pages.length / pageCount;
     for (let i = 0; i < pageCount; i++) {
         let page = [];
@@ -74,16 +82,31 @@ function separatePages(pages) {
     return result;
 }
 
+function setPages(pages) {
+    let slider = document.querySelector(".slider");
+    slider.replaceChildren(...pages.map(cards => {
+        let newPage = document.createElement('div');
+        newPage.classList.add('pets-wrapper');
+        newPage.append(...cards);
+        return newPage;
+    }));
+}
+
+function getOffset(wrapper, page) {
+    let gap = window.getComputedStyle(wrapper).getPropertyValue('gap');
+    let offset = `calc(-1 * (${page - 1} * ${wrapper.clientWidth}px + ${page - 1} * ${gap}))`;
+    return offset;
+}
+
 function switchToPage(pageNum) {
-    let petsWrapper = document.querySelector(".pets-wrapper"),
-    page = pages[pageNum - 1];
-    if (petsWrapper.children.length === 0)
-        petsWrapper.append(...page);
-    else
-        petsWrapper.replaceChildren(...page);
-
+    let slider = document.querySelector(".slider");
+    slider.style.left = getOffset(slider, pageNum);
+    
     pageDiv.innerHTML = pageNum;
+    applyButtons(pageNum);
+}
 
+function applyButtons(pageNum) {
     btnFirstPage.removeAttribute("disabled");
     btnPrevPage.removeAttribute("disabled");
     btnNextPage.removeAttribute("disabled");
@@ -112,8 +135,7 @@ let btnFirstPage = document.getElementById("btnFirstPage"),
     pageDiv = document.getElementById("pageNumber"),
     btnNextPage = document.getElementById("btnNextPage"),
     btnLastPage = document.getElementById("btnLastPage"),
-    cards = generatePages(structuredClone(pets)),
-    pages = separatePages(cards),
+    cards, pages,
     pageNum = 1;
 
 btnFirstPage.addEventListener('click', () => {
