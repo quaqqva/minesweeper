@@ -2,12 +2,12 @@ const mobileQuery = window.matchMedia("(max-width: 767px)"),
       tabletQuery = window.matchMedia("(min-width: 768px) and (max-width:1279px"),
       desktopQuery = window.matchMedia("(min-width:1280px");
 [mobileQuery, tabletQuery, desktopQuery].forEach(
-    query => query.addEventListener("change", () => { console.log("событие");retreiveOffset()})
+    query => query.addEventListener("change", () => { retreiveOffset()})
 );
 
-function generateRandoms(data, previousData) {
+function generateRandoms(data, previousData, petsCount) {
     const getRandomNumber = (max) => Math.floor(Math.random() * max);
-    let petsCount = 3, result = [];
+    let result = [];
     //Исключаем совпадения с прошлыми данными
     if (previousData)
         for (let element of previousData) {
@@ -70,12 +70,13 @@ function retreiveOffset() {
 }
 
 function slide(event) {
-    let direction = event.target.classList.value.split(' ')[1];
-    
+    let direction = event.currentTarget.classList.value.split(' ')[1];
+    if (!direction) return;
+
     if (direction === "left") {
         nextCards = currentCards;
         currentCards = previousCards;
-        previousCards = generateCards(generateRandoms(structuredClone(pets), currentCards));
+        previousCards = generateCards(generateRandoms(structuredClone(pets), currentCards, 3));
 
         petsWrapper.style.left = '0';
         setTimeout(() => {
@@ -88,7 +89,7 @@ function slide(event) {
     else {
         previousCards = currentCards;
         currentCards = nextCards;
-        nextCards = generateCards(generateRandoms(structuredClone(pets), currentCards));
+        nextCards = generateCards(generateRandoms(structuredClone(pets), currentCards, 3));
 
         petsWrapper.style.left = getOffset(true);
         setTimeout(() => {
@@ -101,9 +102,9 @@ function slide(event) {
 }
 
 
-let previousCards = generateCards(generateRandoms(structuredClone(pets), null)),
-    currentCards = generateCards(generateRandoms(structuredClone(pets), previousCards)),
-    nextCards = generateCards(generateRandoms(structuredClone(pets), currentCards)),
+let previousCards = generateCards(generateRandoms(structuredClone(pets), null, 3)),
+    currentCards = generateCards(generateRandoms(structuredClone(pets), previousCards, 3)),
+    nextCards = generateCards(generateRandoms(structuredClone(pets), currentCards, 3)),
     petsWrapper = document.querySelector(".pets-wrapper"),
     sliderWrapper = document.querySelector(".slider-wrapper");
 petsWrapper.append(...previousCards, ...currentCards, ...nextCards);

@@ -46,70 +46,13 @@
                 Our friends who<br>
                 are looking for a house
             </h3>
-            <div class="pets-wrapper">
-                <figure class="pet">
-                    <img src="src/img/photos/pets-katrine.png" alt="Katrine photo">
-                    <figcaption>
-                        <h4>Katrine</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-                <figure class="pet">
-                    <img src="src/img/photos/pets-jennifer.png" alt="Jennifer photo">
-                    <figcaption>
-                        <h4>Jennifer</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-                <figure class="pet">
-                    <img src="src/img/photos/pets-woody.png" alt="Woody photo">
-                    <figcaption>
-                        <h4>Woody</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-                <figure class="pet">
-                    <img src="src/img/photos/pets-sophia.png" alt="Sophia photo">
-                    <figcaption>
-                        <h4>Sophia</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-                <figure class="pet">
-                    <img src="src/img/photos/pets-timmy.png" alt="Timmy photo">
-                    <figcaption>
-                        <h4>Timmy</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-                <figure class="pet">
-                    <img src="src/img/photos/pets-charly.png" alt="Charly photo">
-                    <figcaption>
-                        <h4>Charly</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-                <figure class="pet">
-                    <img src="src/img/photos/pets-scarlett.png" alt="Scarlett photo">
-                    <figcaption>
-                        <h4>Scarlett</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-                <figure class="pet">
-                    <img src="src/img/photos/pets-freddie.png" alt="Freddie photo">
-                    <figcaption>
-                        <h4>Freddie</h4>
-                        <button>Learn more</button>
-                    </figcaption>
-                </figure>
-            </div>
+            <div class="pets-wrapper"></div>
             <div class="pets-navigation">
-                <button class="button-round" disabled>&lt;&lt;</button>
-                <button class="button-round" disabled>&lt;</button>
-                <div class="button-round button-primary">1</div>
-                <button class="button-round">&gt;</button>
-                <button class="button-round">&gt;&gt;</button>
+                <button id="btnFirstPage" class="button-round" disabled>&lt;&lt;</button>
+                <button id="btnPrevPage" class="button-round" disabled>&lt;</button>
+                <div id = "pageNumber" class="button-round button-primary">1</div>
+                <button id="btnNextPage" class="button-round">&gt;</button>
+                <button id="btnLastPage" class="button-round">&gt;&gt;</button>
             </div>
         </main>
         <footer id="footer">
@@ -151,6 +94,7 @@
             </div>
             <img src="src/img/photos/footer-puppy.png" alt="Puppy photo">
         </footer>
+        <script type="text/javascript" src="src/data/pets.json"></script>
         <script src="src/script/menu.js"></script>
         <script src="src/script/pagination.js"></script>
         <script src="src/script/modals.js"></script>
