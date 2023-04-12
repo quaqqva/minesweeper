@@ -981,7 +981,7 @@ footer {
 .our-pets .carousel-wrapper .pets-wrapper {
   display: flex;
   position: relative;
-  transition: left ease-in-out 2s;
+  transition: left ease-in-out 1s;
 }
 .our-pets > button {
   margin: 0 auto;

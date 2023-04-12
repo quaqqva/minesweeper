@@ -99,9 +99,12 @@ function getOffset(wrapper, page) {
 }
 
 function switchToPage(pageNum) {
+    removeListeners();
     let slider = document.querySelector(".slider");
     slider.style.left = getOffset(slider, pageNum);
-    
+    setTimeout(() => {
+        addListeners();
+    }, 1000);
     pageDiv.innerHTML = pageNum;
     applyButtons(pageNum);
 }
@@ -130,6 +133,21 @@ function applyButtons(pageNum) {
     }
 }
 
+function addListeners() {
+    btnFirstPage.addEventListener('click', firstBtnHandler);
+    btnPrevPage.addEventListener('click', prevBtnHandler);
+    btnNextPage.addEventListener('click', nextBtnHandler);
+    btnLastPage.addEventListener('click', lastBtnHandler);
+}
+
+function removeListeners() {
+    btnFirstPage.removeEventListener('click', firstBtnHandler);
+    btnPrevPage.removeEventListener('click', prevBtnHandler);
+    btnNextPage.removeEventListener('click', nextBtnHandler);
+    btnLastPage.removeEventListener('click', lastBtnHandler);
+}
+
+
 let btnFirstPage = document.getElementById("btnFirstPage"),
     btnPrevPage = document.getElementById("btnPrevPage"),
     pageDiv = document.getElementById("pageNumber"),
@@ -138,19 +156,20 @@ let btnFirstPage = document.getElementById("btnFirstPage"),
     cards, pages,
     pageNum = 1;
 
-btnFirstPage.addEventListener('click', () => {
+const firstBtnHandler = () => {
     switchToPage(1);
     pageNum = 1;
-});
-btnPrevPage.addEventListener('click', () => {
-    switchToPage(--pageNum);
-});
-btnNextPage.addEventListener('click', () => {
-    switchToPage(++pageNum);
-});
-btnLastPage.addEventListener('click', () => {
-    switchToPage(pages.length);
+    },
+    prevBtnHandler = () => {
+        switchToPage(--pageNum);
+    },
+    nextBtnHandler = () => {
+        switchToPage(++pageNum);
+    },
+    lastBtnHandler = () => {
+        switchToPage(pages.length);
     pageNum = pages.length;
-})
+    };
 
+addListeners();
 resetPages();
