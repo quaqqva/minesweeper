@@ -64,7 +64,9 @@ function showMenu() {
         menuScreen.classList.toggle('show-menu-screen');
         //Привязка нового события
         burgerBtn.removeEventListener("click", showMenu);
-        burgerBtn.addEventListener("click", hideMenu);
+        setTimeout(() => {
+            burgerBtn.addEventListener("click", hideMenu);
+        }, 1000);
     }, 5);
     //Вешаем закрытие на клик в стороне
     menuScreen.addEventListener('click', (event) => {
