@@ -216,3 +216,35 @@ button {
   }
 }
 
+.h5-modal-window {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  &::after {
+    content: ": ";
+  }
+  color:black;
+}
+
+.modal h3, h4, h5 {
+  color:black;
+}
+
+.modal h5 {
+  @media (min-width:$tablet-width) and (max-width: $desktop-width) {
+    font-size:13px;
+  }
+  @media (min-width: $desktop-width) {
+    font-size: 15px;
+  }
+}
+
+.modal-list-item {
+  font-style: normal;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color:black;
+}

@@ -43,6 +43,7 @@ function getCard(pet) {
                 <button>Learn more</button>
             </figcaption>
     `
+    cardNode.addEventListener('click', openModal);
     return cardNode;
 }
 

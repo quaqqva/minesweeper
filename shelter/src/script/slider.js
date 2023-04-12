@@ -35,7 +35,8 @@ function getCard(pet) {
                 <h4>${pet.name}</h4>
                 <button>Learn more</button>
             </figcaption>
-    `
+    `;
+    cardNode.addEventListener('click', openModal);
     return cardNode;
 }
 
