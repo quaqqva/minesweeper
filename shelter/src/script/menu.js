@@ -64,9 +64,7 @@ function showMenu() {
         menuScreen.classList.toggle('show-menu-screen');
         //Привязка нового события
         burgerBtn.removeEventListener("click", showMenu);
-        setTimeout(() => {
-            burgerBtn.addEventListener("click", hideMenu);
-        }, 1000);
+        burgerBtn.addEventListener("click", hideMenu);
     }, 5);
     //Вешаем закрытие на клик в стороне
     menuScreen.addEventListener('click', (event) => {
@@ -85,12 +83,11 @@ function hideMenu() {
     burgerBtn.classList.toggle("rotate90deg");
     menuScreen.classList.toggle("show-menu-screen");
     document.querySelector('.menu-wrapper').classList.toggle("show-menu");
+    burgerBtn.removeEventListener("click", hideMenu);
+    burgerBtn.addEventListener("click", showMenu);
     //Анимация кончится, и тогда...
     setTimeout(() => {
         document.body.removeChild(menuScreen);
-        //Привязка нового события
-        burgerBtn.removeEventListener("click", hideMenu);
-        burgerBtn.addEventListener("click", showMenu);
         //Вернём прокрутку
         document.body.style.overflow = '';
     }, 1000);
