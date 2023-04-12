@@ -1,15 +1,11 @@
 .modal-wrapper {
     position: relative;
     transition: top ease-in-out 1s;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
     button {
-        align-self: flex-end;
         z-index: 5;
-        position:relative;
-        left:32px;
+        position:absolute;
+        right:-32px;
+        top:-52px;
     }
 }
 
