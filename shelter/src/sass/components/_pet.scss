@@ -5,10 +5,14 @@
   margin:0;
   background-color:$color-light-s;
   border-radius:9px;
+  flex:0 0 270px;
   img {
     width:100%;
     margin-bottom:25px;
     border-radius: 9px 9px 0 0;
+  }
+  button:active {
+    transform: none !important;
   }
   figcaption {
     text-align:center;

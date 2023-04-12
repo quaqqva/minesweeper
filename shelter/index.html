@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="IE=Edge">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="icon" type="image/x-icon" href="src/img/icons/favicon.ico">
-    <script src="src/script/index.js"></script>
+    <script src="src/script/log-scores.js"></script>
     <title>Shelter | Main</title>
 </head>
 <body>
@@ -36,11 +36,11 @@
                             <a class="paragraph-l on-dark" href="#footer">Contacts</a>
                         </li>
                     </ul>
-                    <svg class="burger-btn" width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line y1="21" x2="30" y2="21" stroke-width="2"/>
-                        <line y1="11" x2="30" y2="11" stroke-width="2"/>
-                        <line y1="1" x2="30" y2="1" stroke-width="2"/>
-                    </svg>
+                    <button class="burger-btn">
+                        <div class = "burger-btn-line"></div>
+                        <div class = "burger-btn-line"></div>
+                        <div class = "burger-btn-line"></div>
+                    </button>
                 </nav>
             </header>
             <div class="start-screen-elements">
@@ -71,33 +71,13 @@
         <section class="our-pets" id="our-pets">
             <h3>Our friends who<br> are looking for a house</h3>
             <div class="carousel-wrapper">
-                <button class="button-round">
+                <button class="button-round left">
                     <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M14 2V4H3V6L0 3L3 0V2H14Z"/>
                     </svg>
                 </button>
-                <div class="pets-wrapper">
-                    <figure class="pet">
-                        <img src="src/img/photos/pets-katrine.png" alt="Katrine photo">
-                        <figcaption>
-                            <h4>Katrine</h4>
-                            <button>Learn more</button>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet">
-                        <img src="src/img/photos/pets-jennifer.png" alt="Jennifer photo">
-                        <figcaption>
-                            <h4>Jennifer</h4>
-                            <button>Learn more</button>
-                        </figcaption>
-                    </figure>
-                    <figure class="pet">
-                        <img src="src/img/photos/pets-woody.png" alt="Woody photo">
-                        <figcaption>
-                            <h4>Woody</h4>
-                            <button>Learn more</button>
-                        </figcaption>
-                    </figure>
+                <div class="slider-wrapper">
+                    <div class="pets-wrapper"></div>
                 </div>
                 <button class="button-round right">
                     <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -206,5 +186,9 @@
         </div>
         <img src="src/img/photos/footer-puppy.png" alt="Puppy photo">
     </footer>
+    <script type="text/javascript" src="src/data/pets.json"></script>
+    <script src="src/script/menu.js"></script>
+    <script src="src/script/modals.js"></script>
+    <script src="src/script/slider.js"></script>
 </body>
 </html>
