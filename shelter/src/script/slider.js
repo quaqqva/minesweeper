@@ -66,13 +66,15 @@ function retreiveOffset() {
     petsWrapper.style.left = getOffset(false);
     setTimeout(() => {
         petsWrapper.classList.toggle("no-transition");
-    }, 100);
+    }, 10);
         
 }
 
 function slide(event) {
     let direction = event.currentTarget.classList.value.split(' ')[1];
     if (!direction) return;
+
+    removeListeners();
 
     if (direction === "left") {
         nextCards = currentCards;
@@ -85,7 +87,8 @@ function slide(event) {
             for (let i = 0; i < 3; i++)
                 petsWrapper.removeChild(petsWrapper.lastChild);
             retreiveOffset();
-        }, 2000);   
+            setTimeout(() => addListeners(), 10);
+        }, 1000);   
     }
     else {
         previousCards = currentCards;
@@ -98,8 +101,19 @@ function slide(event) {
             for (let i = 0; i < 3; i++)
                 petsWrapper.removeChild(petsWrapper.firstChild);
             retreiveOffset();
-        }, 2000);
+            setTimeout(() => addListeners(), 10);
+        }, 1000);
     }
+}
+
+function removeListeners() {
+    document.querySelector(".button-round.left").removeEventListener('click', slide);
+    document.querySelector(".button-round.right").removeEventListener('click', slide);
+}
+
+function addListeners() {
+    document.querySelector(".button-round.left").addEventListener('click', slide);
+    document.querySelector(".button-round.right").addEventListener('click', slide);
 }
 
 
@@ -110,6 +124,5 @@ let previousCards = generateCards(generateRandoms(structuredClone(pets), null, 3
     sliderWrapper = document.querySelector(".slider-wrapper");
 petsWrapper.append(...previousCards, ...currentCards, ...nextCards);
 petsWrapper.style.left = getOffset(false);
-document.querySelector(".button-round.left").addEventListener('click', slide);
-document.querySelector(".button-round.right").addEventListener('click', slide);
+addListeners();
 

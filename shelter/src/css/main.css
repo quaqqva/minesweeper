@@ -256,6 +256,10 @@ button {
 html {
   scroll-behavior: smooth;
 }
+html ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
 
 @media (max-width: 768px) {
   section {
@@ -495,6 +499,16 @@ nav .burger-btn-line {
   right: -32px;
   top: -52px;
 }
+@media (max-width: 768px) {
+  .modal-wrapper button {
+    right: -32px;
+  }
+}
+@media (min-width: 768px) {
+  .modal-wrapper button {
+    right: -42px;
+  }
+}
 
 .modal {
   width: 100%;
@@ -506,6 +520,9 @@ nav .burger-btn-line {
 }
 .modal img {
   width: auto;
+}
+.modal h4 {
+  font-size: 20px;
 }
 .modal .text-wrapper {
   display: flex;
@@ -537,6 +554,11 @@ nav .burger-btn-line {
   }
   .modal .text-wrapper {
     margin: 10px;
+    gap: 20px;
+  }
+  .modal .text-wrapper .header {
+    text-align: center;
+    align-self: center;
   }
 }
 @media (min-width: 768px) and (max-width: 1280px) {
@@ -553,6 +575,10 @@ nav .burger-btn-line {
   }
   .modal .text-wrapper ul {
     gap: 5px;
+  }
+  .modal .text-wrapper .header {
+    text-align: start;
+    align-self: flex-start;
   }
 }
 @media (min-width: 1280px) {
@@ -981,7 +1007,7 @@ footer {
 .our-pets .carousel-wrapper .pets-wrapper {
   display: flex;
   position: relative;
-  transition: left ease-in-out 2s;
+  transition: left ease-in-out 1s;
 }
 .our-pets > button {
   margin: 0 auto;

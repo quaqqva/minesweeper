@@ -5,32 +5,32 @@ const mobileQuery = window.matchMedia("(max-width: 767px)"),
     query => query.addEventListener("change", resetPages)
 );
 
-function generateRandoms(data, previousData, petsCount) {
+function generateRandoms(petsArr, count, ...prevData) {
     const getRandomNumber = (max) => Math.floor(Math.random() * max);
-    let result = [];
-    //Исключаем совпадения с прошлыми данными    
-    if (petsCount === 3 && previousData) {
-        for (let element of previousData)
+    let result = [], data = structuredClone(petsArr);
+    //Убираем из набора старые
+    if (prevData)
+        for (let element of prevData)
             data.splice(data.findIndex(pet => pet.name === element.querySelector('h4').innerHTML), 1);
-    }
     //Выбираем новые
-    for (let i = 0; i < petsCount; i++) {
-        let petIndex = getRandomNumber(data.length);
+    for (let i = 0; i < count; i++) {
+        let petIndex = getRandomNumber(data.length, null);
         result.push(data[petIndex]);
         //Удаляем элемент, чтобы больше в рандоме его не встретить
         data.splice(petIndex, 1);
     }
-    return result === previousData?generateRandoms(data , previousData, petsCount):result;
+    return result;
 }
 
-function generatePages(data, pagesCount) {
-    let elemsPerPages = 48/pagesCount, previousPage = null,
-    result = new Array(pagesCount*elemsPerPages);
-    for (let i = 0; i < pagesCount; i++) {
-        let page = getCards(generateRandoms(structuredClone(data), previousPage, elemsPerPages));
-        for (let j = 0; j < page.length; j++)
-            result[i*elemsPerPages + j] = page[j];
-        previousPage = page;
+function generatePages(data) {
+    let result = []; 
+    for (let i = 0; i < 2; i++) {
+        let firstPage = getCards(generateRandoms(data, 8));
+        let secondPage = getCards(generateRandoms(data, 4, ...firstPage.slice(6)));
+        secondPage.push(...getCards(generateRandoms(data, 4, ...secondPage)));
+        let thirdPage = getCards(generateRandoms(data, 2, ...secondPage.slice(4)));
+        thirdPage.push(...getCards(generateRandoms(data, 6, ...thirdPage)));
+        result.push(...firstPage, ...secondPage, ...thirdPage);
     }
     return result;
 }
@@ -61,8 +61,9 @@ function getPageCount() {
         pageCount = 6;
     return pageCount;
 }
+
 function resetPages() {
-    pages = separatePages(generatePages(pets, getPageCount()));
+    pages = separatePages(cards);
     setPages(pages);
     switchToPage(1);
     pageNum = 1;
@@ -84,10 +85,10 @@ function separatePages(pages) {
 
 function setPages(pages) {
     let slider = document.querySelector(".slider");
-    slider.replaceChildren(...pages.map(cards => {
+    slider.replaceChildren(...pages.map(page => {
         let newPage = document.createElement('div');
         newPage.classList.add('pets-wrapper');
-        newPage.append(...cards);
+        newPage.append(...page);
         return newPage;
     }));
 }
@@ -99,9 +100,12 @@ function getOffset(wrapper, page) {
 }
 
 function switchToPage(pageNum) {
+    removeListeners();
     let slider = document.querySelector(".slider");
     slider.style.left = getOffset(slider, pageNum);
-    
+    setTimeout(() => {
+        addListeners();
+    }, 1000);
     pageDiv.innerHTML = pageNum;
     applyButtons(pageNum);
 }
@@ -130,27 +134,43 @@ function applyButtons(pageNum) {
     }
 }
 
+function addListeners() {
+    btnFirstPage.addEventListener('click', firstBtnHandler);
+    btnPrevPage.addEventListener('click', prevBtnHandler);
+    btnNextPage.addEventListener('click', nextBtnHandler);
+    btnLastPage.addEventListener('click', lastBtnHandler);
+}
+
+function removeListeners() {
+    btnFirstPage.removeEventListener('click', firstBtnHandler);
+    btnPrevPage.removeEventListener('click', prevBtnHandler);
+    btnNextPage.removeEventListener('click', nextBtnHandler);
+    btnLastPage.removeEventListener('click', lastBtnHandler);
+}
+
+
 let btnFirstPage = document.getElementById("btnFirstPage"),
     btnPrevPage = document.getElementById("btnPrevPage"),
     pageDiv = document.getElementById("pageNumber"),
     btnNextPage = document.getElementById("btnNextPage"),
     btnLastPage = document.getElementById("btnLastPage"),
-    cards, pages,
+    cards = generatePages(pets), pages,
     pageNum = 1;
 
-btnFirstPage.addEventListener('click', () => {
+const firstBtnHandler = () => {
     switchToPage(1);
     pageNum = 1;
-});
-btnPrevPage.addEventListener('click', () => {
-    switchToPage(--pageNum);
-});
-btnNextPage.addEventListener('click', () => {
-    switchToPage(++pageNum);
-});
-btnLastPage.addEventListener('click', () => {
-    switchToPage(pages.length);
+    },
+    prevBtnHandler = () => {
+        switchToPage(--pageNum);
+    },
+    nextBtnHandler = () => {
+        switchToPage(++pageNum);
+    },
+    lastBtnHandler = () => {
+        switchToPage(pages.length);
     pageNum = pages.length;
-})
+    };
 
+addListeners();
 resetPages();

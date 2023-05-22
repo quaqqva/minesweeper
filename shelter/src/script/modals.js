@@ -44,10 +44,12 @@ function openModal(event) {
     }, 5);
     
     modalElement.querySelector('button').addEventListener('click', cancelModal);
-    modalElement.addEventListener('click', (event) => {
-        if (event.currentTarget === event.target)
-            cancelModal();
-    });
+    setTimeout(() => {
+        modalElement.addEventListener('click', (event) => {
+            if (event.currentTarget === event.target)
+                cancelModal();
+        });
+    }, 1000);
 }
 
 function cancelModal() {
