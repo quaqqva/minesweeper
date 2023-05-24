@@ -1,0 +1,98 @@
+.minefield {
+  display: grid;
+  height: 75%;
+  aspect-ratio: 1/1;
+  margin:0 auto;
+  gap:0;
+  justify-content: flex-start;
+  position: relative;
+  z-index:1;
+
+  @for $i from 2 through 5 {
+    $size: $i * 5;
+    
+    &[data-size="#{$size}"] {
+        grid-template-rows: repeat($size, 1fr);
+        grid-template-columns: repeat($size, 1fr);
+    }
+  }
+  &[data-size="25"] {
+    height: 80%;
+    button {
+      font-size: 0.5em;
+    }
+  }
+}
+
+.minefield__button {
+  cursor: pointer;
+  outline: none;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  img {
+    max-height: 60%;
+    max-width: 60%;
+    aspect-ratio: 1/1;
+  }
+}
+
+.minefield__button_1 {
+   color: blue;
+   &.night {
+    color: lightblue;
+   }
+}
+
+.minefield__button_2 {
+  color: green;
+  &.night {
+    color: lightgreen;
+  }
+}
+
+.minefield__button_3 {
+  color: red;
+  &.night {
+    color: lightcoral;
+  }
+}
+
+.minefield__button_4 {
+  color: darkblue;
+  &.night {
+    color: antiquewhite;
+  }
+}
+
+.minefield__button_5 {
+  color: darkred;
+  &.night {
+    color:burlywood;
+  }
+}
+
+.minefield__button_6 {
+  color: darkcyan;
+  &.night {
+    color:lightpink;
+  }
+}
+
+.minefield__button_7 {
+  color: darkviolet;
+  &.night {
+    color: lightgoldenrodyellow;
+  }
+}
+
+.minefield__button_8 {
+  color: darkgoldenrod;
+  &.night {
+    color: grey;
+  }
+}
+
+

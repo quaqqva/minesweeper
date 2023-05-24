@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Pixeloid Sans';
+    src: url('./../../assets/fonts/PixeloidSans.eot');
+    src: url('./../../assets/fonts/PixeloidSans.eot?#iefix') format('embedded-opentype'),
+        url('./../../assets/fonts/PixeloidSans.woff2') format('woff2'),
+        url('./../../assets/fonts/PixeloidSans.woff') format('woff'),
+        url('./../../assets/fonts/PixeloidSans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+  font-family: "Pixeloid Sans";
+  color: $shadow-color;
+}
+
+.menu__button {
+  font-size: max(calc(100vw * 2 / 105 - 712px / 105), 10px);
+}
+
+body.night {
+  color: $secondary-color !important;
+}
+
+.button {
+  font-size: 1.25rem;
+}

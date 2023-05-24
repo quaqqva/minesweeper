@@ -1,0 +1,27 @@
+.switch-sound-button {
+  cursor: pointer;
+  position: absolute;
+  left: calc(25% + 5px);
+  top: 40%;
+  z-index: 1;
+  outline: none;
+
+  img {
+    max-height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+  }
+
+  @media (max-width: 1300px) {
+    left: calc(15% + 5px);
+  }
+
+  @media (max-width: 1000px) {
+    left: calc(25vw - 167.5px)
+  }
+
+  @media (max-width: 700px) {
+    left: 2.5%;
+  }
+  
+}

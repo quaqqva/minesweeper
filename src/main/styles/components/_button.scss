@@ -1,0 +1,122 @@
+.button {
+  width: 90%;
+  height: 20%;
+  border-radius: 10px;
+  border: 4px solid $secondary-color;
+  box-shadow: 0 4px $secondary-color;
+  position: relative;
+  z-index: 1;
+
+  &:active {
+    top:4px;
+    box-shadow: none;
+  };
+}
+
+.button__easy {
+  background-color: $easy-btn-color;
+}
+
+.button__medium {
+  background-color: $medium-btn-color;
+}
+
+.button__hard {
+  background-color: $hard-btn-color;
+}
+
+.start-modal__load-button {
+  color: $shadow-color !important;
+  border-color: $shadow-color;
+  box-shadow: 0 4px $shadow-color;
+}
+
+.minefield__button {
+  @include pixel-box(
+    $corner-size: 2,
+    $border-color: darken($minefield-btn-color, 25),
+    $border-size: 2px,
+    $background-color: $minefield-btn-color
+  );
+
+  &:disabled {
+    @include pixel-box(
+      $corner-size: 2,
+      $border-color: darken($minefield-btn-color, 30),
+      $border-size: 1px,
+      $background-color: darken($minefield-btn-color, 5)
+    )
+  }
+
+  &.night {
+    @include pixel-box(
+    $corner-size: 2,
+    $border-color: darken($minefield-btn-color-night, 25),
+    $border-size: 2px,
+    $background-color: $minefield-btn-color-night
+    );
+    &:disabled {
+      @include pixel-box(
+        $corner-size: 2,
+        $border-color: darken($minefield-btn-color-night, 30),
+        $border-size: 1px,
+        $background-color: darken($minefield-btn-color-night, 5)
+      )
+    }
+  }
+}
+
+.minefield__button_releaved, .minefield__button_releaved:disabled {
+  @include pixel-box(
+    $corner-size: 1,
+    $border-color: darken($hard-btn-color, 10),
+    $border-size: 2px,
+    $background-color: $hard-btn-color
+  )
+}
+
+.menu__flag-button {
+  @include pixel-borders(
+    $border-size: 3px
+  );
+  background-color: $secondary-color;
+  padding: 5%;
+  z-index: 1;
+
+  &:hover {
+    background-color: darken($secondary-color, 10);
+  }
+
+  &.night {
+    background-color: $medium-btn-color;
+    @include pixel-borders(
+    $border-size: 3px,
+    $border-color: $secondary-color
+  );
+  }
+}
+
+.switch-sound-button {
+  width: 60px;
+  aspect-ratio: 1/1;
+  @include pixel-box(
+    $corner-size: 1,
+    $border-color: $shadow-color,
+    $border-size: 3px,
+    $background-color: $secondary-color
+  );
+
+  &.night {
+    @include pixel-box(
+    $corner-size: 1,
+    $border-color: $shadow-color,
+    $border-size: 3px,
+    $background-color: grey
+    );
+    position: absolute;
+  }
+
+  @media (max-width: 700px) {
+    width: 7%;
+  }
+}
