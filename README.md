@@ -19,4 +19,4 @@
   - Webpack
 
 ## Ссылки
-  [Деплой](https://quaqvagit.github.io/minesweeper/)
+  [Деплой](https://quaqqva.github.io/minesweeper/)
